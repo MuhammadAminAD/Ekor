@@ -1,1 +1,6 @@
-export const ru = {}
+export const ru = {
+     
+}
+
+
+export default ru;
