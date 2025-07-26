@@ -1,11 +1,11 @@
-import { Provider } from "react-redux";
 import AppRouter from "./router/index.route";
 import "@/i18n/i18next.config.ts"
-import { store } from "./app/store";
+import Navbar from "./components/shared/Navbar/Navbar";
 export default function App() {
     return (
-        <Provider store={store}>
+        <>
+        <Navbar/>
         <AppRouter />
-        </Provider>
+        </>
     )
 }
