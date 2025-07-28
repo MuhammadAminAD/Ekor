@@ -10,6 +10,8 @@ body {
 
 
 @theme inline {
+  --color-main-blue: #006AFF;
+  --color-main-black: #1C1C1C;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -85,6 +87,7 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

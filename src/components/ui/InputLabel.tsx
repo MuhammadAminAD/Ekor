@@ -2,16 +2,21 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import type { ControllerRenderProps, FieldError, FieldValues, Path } from "react-hook-form";
 
-export default function InputLabel({
+type InputLabelProps<T extends FieldValues, K extends Path<T> = Path<T>> = {
+      placeholder: string;
+      uid: string;
+      field: ControllerRenderProps<T, K>;
+      error?: FieldError;
+};
+
+export default function InputLabel<T extends FieldValues, K extends Path<T> = Path<T>>({
       placeholder,
       uid,
       field,
-}: {
-      placeholder: string;
-      uid: string;
-      field: any;
-}) {
+      error,
+}: InputLabelProps<T, K>) {
       const [active, setActive] = useState(false);
 
       return (
@@ -21,7 +26,7 @@ export default function InputLabel({
                               htmlFor={uid}
                               className={cn(
                                     `${active || field.value
-                                          ? "-top-1/4 px-1 bg-white text-md font-light"
+                                          ? "-top-1/6 px-1 bg-white text-md font-light"
                                           : "top-1/2 -translate-y-1/2 text-[20px] font-medium text-[#1C1C1C]"
                                     } absolute left-[25px] duration-375`
                               )}
@@ -31,12 +36,14 @@ export default function InputLabel({
 
                         <Input
                               id={uid}
-                              className="w-100 p-[23px_25px] !ring-0 border-2 border-[#D9D9D9]"
+                              className={`w-full rounded-[15px] h-[70px] p-[23px_25px] !ring-0 border-2 outline-0 ${error ? "!border-[#EF2B23]" : "border-[#D9D9D9]"
+                                    }`}
                               {...field}
+                              value={field.value as string}
                               onFocus={() => setActive(true)}
-                              onBlur={(e) => {
+                              onBlur={() => {
                                     setActive(false);
-                                    field.onBlur(e); 
+                                    field.onBlur();
                               }}
                         />
                   </div>

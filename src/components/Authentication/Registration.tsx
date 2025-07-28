@@ -1,39 +1,35 @@
-import { useForm } from "react-hook-form";
-import { Button } from "../ui/button";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
-import InputLabel from "../ui/InputLabel";
-import { emailSchema, type EmailSchemaType } from "@/schemas/RegistrationSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-
+import { styles } from "@/styles/index.styles";
+import { useDispatch } from "react-redux";
+import { setActiveAuthPage } from "@/features/AuthenticationSlice";
+import RegistrationForms from "./RegistrationForms";
 
 export default function Registration() {
-      const form = useForm<EmailSchemaType>({
-            resolver: zodResolver(emailSchema),
-            defaultValues: {
-                  email: ""
-            },
-      });
-      return (
-            <div>
-                  <h1>Ro’yxatdan o’tish</h1>
-                  <Form {...form}>
-                        <form onSubmit={form.handleSubmit((values) => console.log(values))}>
-                              <FormField
-                                    control={form.control}
-                                    name="email"
-                                    render={({ field }) => (
-                                          <FormItem className="flex flex-col">
-                                                <FormControl>
-                                                      <InputLabel placeholder="Elektron pochtangiz" uid="register-step1-email" field={field} />
-                                                </FormControl>
 
-                                                <FormMessage className="text-[12px] mt-[10px] block text-[#f10134] leading-[130%] font-medium " />
-                                          </FormItem>
-                                    )}
-                              />
-                              <Button type="submit">Davom etish</Button>
-                        </form>
-                  </Form>
+      const dispatch = useDispatch()
+
+      return (
+            <div className="w-full">
+                  <h1 className={`${styles.text32_500} mb-16`}>Ro’yxatdan o’tish</h1>
+
+                  <RegistrationForms />
+
+                  <div>
+                        <div className="w-full flex items-center mt-12.5">
+                              <span className="w-full h-[1px] border-2 border-[#D9D9D9]" />
+                              <span className="px-2.5 text-[#999999] text-md font-medium">yoki</span>
+                              <span className="w-full h-[1px] border-2 border-[#D9D9D9]" />
+                        </div>
+
+                        <h2 className="w-full mt-12.5 text-center text-[#1C1C1C]">
+                              Akkauntingiz bormi? Unda
+                              <button
+                                    onClick={() => { dispatch(setActiveAuthPage("sign-in")) }}
+                                    className="text-main-blue underline text-md font-medium cursor-pointer">
+                                    Kirishga
+                              </button>
+                              bosing
+                        </h2>
+                  </div>
             </div>
-      )
+      );
 }

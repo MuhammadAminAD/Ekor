@@ -15,18 +15,19 @@ const AuthenticationSlice = createSlice({
       name: "Authentication",
       initialState: initialState,
       reducers: {
-            setActivePage: (state, action: PayloadAction<pages>) => {
+            setActiveAuthPage: (state, action: PayloadAction<pages>) => {
                   state.page = action.payload
+                  state.step = 0
             },
-            setActiveStep: (state, action: PayloadAction<number>) => {
+            setActiveAuthStep: (state, action: PayloadAction<number>) => {
                   state.step = action.payload
             },
       }
 })
 
 export const {
-      setActivePage,
-      setActiveStep
+      setActiveAuthPage,
+      setActiveAuthStep
 } = AuthenticationSlice.actions;
 
 

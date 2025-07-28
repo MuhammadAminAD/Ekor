@@ -10,7 +10,6 @@ export default function App() {
           <div className="max-w-[240px] h-[100dvh]">
             <Sidebar />
           </div>
-          <div className="w-full"></div>
           <AppRouter />
         </div>
       </div>
