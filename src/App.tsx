@@ -16,7 +16,6 @@ export default function App() {
           <div className="w-full">
             <AppRouter />
           </div>
-          <AppRouter />
         </div>
       </div>
     </>
