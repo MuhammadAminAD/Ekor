@@ -6,9 +6,7 @@ export default function AppRouter() {
   return (
     <>
       <Routes>
-        <Route element={<Authentication />} path="/auth/sign-in/:step" />
-        <Route element={<Authentication />} path="/auth/registration/:step" />
-        <Route element={<Authentication />} path="/auth/restore-password/:step" />
+        <Route element={<Authentication />} path="/auth" />
         <Route element={<Home />} path="/" />
       </Routes>
     </>
