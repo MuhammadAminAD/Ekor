@@ -17,7 +17,7 @@ const AuthenticationSlice = createSlice({
       reducers: {
             setActiveAuthPage: (state, action: PayloadAction<pages>) => {
                   state.page = action.payload
-                  state.step = 0
+                  state.step = 1
             },
             setActiveAuthStep: (state, action: PayloadAction<number>) => {
                   state.step = action.payload

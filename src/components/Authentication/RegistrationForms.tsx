@@ -12,10 +12,18 @@ import type { RootState } from "@/app/store";
 export default function RegistrationForms() {
       const { step } = useSelector((state: RootState) => state.AuthenticationSlice)
       return (
-            <div>
-                  {step === 1 && Step1()}
-                  {step === 2 && Step2()}
-                  {step === 3 && Step3()}
+            <div className="overflow-x-hidden h-min">
+                  <div className={`flex flex-col justify-center duration-500`}>
+                        <div className={`min-w-full overflow-hidden duration-700 ${step === 1 ? "max-h-300" : "max-h-0"} `}>
+                              {Step1()}
+                        </div>
+                        <div className={`min-w-full overflow-hidden duration-700 ${step === 2 ? "max-h-300" : "max-h-0"} `}>
+                              {Step2()}
+                        </div>
+                        <div className={`min-w-full overflow-hidden duration-700 ${step === 3 ? "max-h-300" : "max-h-0"} `}>
+                              {Step3()}
+                        </div>
+                  </div>
             </div>
       )
 }
@@ -115,8 +123,6 @@ function Step2() {
       )
 }
 
-
-
 function Step3() {
       const dispatch = useDispatch();
 
@@ -173,7 +179,7 @@ function Step3() {
                                           name="password"
                                           render={({ field }) => (
                                                 <FormItem>
-                                                      <InputLabel placeholder="Parol" uid="auth-registr3-pass" field={field} />
+                                                      <InputLabel placeholder="Parol" uid="auth-registr3-pass" field={field} type="password" />
                                                       <FormMessage className="text-[14px] mt-[10px] block text-[#EF2B23] font-light" />
                                                 </FormItem>
                                           )}
@@ -183,7 +189,7 @@ function Step3() {
                                           name="confirmPassword"
                                           render={({ field }) => (
                                                 <FormItem>
-                                                      <InputLabel placeholder="Parolni tasdiqlash" uid="auth-registr3-confpass" field={field} />
+                                                      <InputLabel placeholder="Parolni tasdiqlash" uid="auth-registr3-confpass" field={field} type="password" />
                                                       <FormMessage className="text-[14px] mt-[10px] block text-[#EF2B23] font-light" />
                                                 </FormItem>
                                           )}

@@ -12,13 +12,36 @@ export const codeSchema = z.object({
 // type
 export type CodeSchemaType = z.infer<typeof codeSchema>;
 
-export const RegistrationSchema = z.object({
-      lastName: z.string().min(1, "Familiyangizni kiriting"),
-      firstName: z.string().min(1, "Ismingizni kiriting"),
-      password: z.string().min(6, "Parol kamida 6 ta belgidan iborat bo‘lishi kerak"),
-      confirmPassword: z.string().min(6),
-      gender: z.enum(["male", "female"]),
-});
+
+export const RegistrationSchema = z
+      .object({
+            lastName: z
+                  .string()
+                  .refine((val) => val.trim() !== "", {
+                        message: "Familiyangizni to‘ldiring",
+                  }),
+
+            firstName: z
+                  .string()
+                  .refine((val) => val.trim() !== "", {
+                        message: "Ismingizni to‘ldiring",
+                  }),
+
+            password: z
+                  .string()
+                  .min(6, "Parol kamida 6 ta belgidan iborat bo‘lishi kerak"),
+
+            confirmPassword: z
+                  .string()
+                  .min(6, "Parolni tasdiqlash kamida 6 ta belgidan iborat bo‘lishi kerak"),
+
+            gender: z.enum(["male", "female"]),
+      })
+      .refine((data) => data.password === data.confirmPassword, {
+            path: ["confirmPassword"],
+            message: "Parollar mos emas",
+      });
+
 
 
 export type RegistrationSchemaType = z.infer<typeof RegistrationSchema>;

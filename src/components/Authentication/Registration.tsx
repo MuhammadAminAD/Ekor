@@ -24,7 +24,7 @@ export default function Registration() {
                               Akkauntingiz bormi? Unda
                               <button
                                     onClick={() => { dispatch(setActiveAuthPage("sign-in")) }}
-                                    className="text-main-blue underline text-md font-medium cursor-pointer">
+                                    className="text-main-blue underline text-md font-medium cursor-pointer mx-1">
                                     Kirishga
                               </button>
                               bosing
