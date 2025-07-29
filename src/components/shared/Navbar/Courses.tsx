@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 const Courses = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(true);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [openPopover, setOpenPopover] = useState<string | null>(null);
 
   const handleTitleClick = (title: string) => {
