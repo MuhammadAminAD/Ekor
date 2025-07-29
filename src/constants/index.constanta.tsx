@@ -1,4 +1,4 @@
-import type { ICourses, ISidebar } from "@/types/index.types";
+import type { ICourses, IMenuCategory, ISidebar } from "@/types/index.types";
 import SendIcon from "@/components/icons/SendIcon";
 import TeacherIcon from "@/components/icons/TeacherIcon";
 import ElementIcon from "@/components/icons/ElementIcon";
@@ -26,6 +26,110 @@ export const sideBar: ISidebar[] = [
     icon: SendIcon,
   },
 ];
+
+
+export const menuCategories: IMenuCategory[] = [
+  {
+    title: "Biznes",
+    submenu: [
+      { title: "Marketing" },
+      { title: "Menejment" },
+      { title: "CRM" },
+      { title: "Boshqaruv" },
+      { title: "Sotuvlar" },
+      { title: "Tijorat huquqi" },
+      { title: "Hamkorlik" },
+      { title: "Networking" },
+      { title: "Ko'chmas mulk" },
+      { title: "Media" },
+      { title: "Start-up" },
+      { title: "Boshqa" },
+    ],
+  },
+  {
+    title: "IT va dasturlash",
+    submenu: [
+      { title: "Frontend" },
+      { title: "Backend" },
+      { title: "Fullstack" },
+      { title: "Mobil ilovalar" },
+      { title: "Sun’iy intellekt" },
+      { title: "Ma’lumotlar bazasi" },
+      { title: "DevOps" },
+      { title: "Kiberxavfsizlik" },
+      { title: "Boshqa" },
+    ],
+  },
+  {
+    title: "Marketing",
+    submenu: [
+      { title: "Raqamli marketing" },
+      { title: "Ijtimoiy media" },
+      { title: "Kontent marketing" },
+      { title: "Email marketing" },
+      { title: "SEO/SEM" },
+      { title: "Brending" },
+      { title: "Boshqa" },
+    ],
+  },
+  {
+    title: "Shaxsiy o'sish",
+    submenu: [
+      { title: "Time management" },
+      { title: "Maqsad qo'yish" },
+      { title: "Soft skills" },
+      { title: "Psixologiya" },
+      { title: "Motivatsiya" },
+      { title: "Boshqa" },
+    ],
+  },
+  {
+    title: "Ta'lim va ilmiy fanlar",
+    submenu: [
+      { title: "Matematika" },
+      { title: "Fizika" },
+      { title: "Kimyo" },
+      { title: "Biologiya" },
+      { title: "Tarix" },
+      { title: "Til o‘rganish" },
+      { title: "Boshqa" },
+    ],
+  },
+  {
+    title: "Foto va video",
+    submenu: [
+      { title: "Fotografiya" },
+      { title: "Videomontaj" },
+      { title: "Animatsiya" },
+      { title: "Grafik dizayn" },
+      { title: "YouTube kontent" },
+      { title: "Boshqa" },
+    ],
+  },
+  {
+    title: "Sog'lik va fitnes",
+    submenu: [
+      { title: "Fitness" },
+      { title: "Ovqatlanish" },
+      { title: "Mental salomatlik" },
+      { title: "Yoga" },
+      { title: "Sport" },
+      { title: "Boshqa" },
+    ],
+  },
+  {
+    title: "Boshqa",
+    submenu: [
+      { title: "Qo‘l san’atlari" },
+      { title: "Oshpazlik" },
+      { title: "Sayohat" },
+      { title: "Oilaviy maslahatlar" },
+      { title: "Hayot tarzi" },
+      { title: "Boshqa" },
+    ],
+  },
+];
+
 
 export const courses: ICourses[] = [
   {

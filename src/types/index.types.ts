@@ -7,6 +7,14 @@ export interface ISidebar {
   path: string;
   icon: React.ComponentType<IconProps>;
 }
+export interface ISubmenuItem {
+  title: string;
+}
+
+export interface IMenuCategory {
+  title: string;
+  submenu: ISubmenuItem[];
+}
 
 
 export interface ICourses {

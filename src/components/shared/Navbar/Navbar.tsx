@@ -1,19 +1,29 @@
 import { styles } from "@/styles/index.styles";
-import bars from "@/assets/icons/menu.svg";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "@/assets/icons/logo.svg";
-import book from "@/assets/icons/book.svg";
 import cart from "@/assets/icons/shopping-cart.svg";
 import Search from "./Search";
+import Courses from "./Courses";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "@/app/store";
+import { setSidebarOpen } from "@/features/SidebarSlice";
+import MenuIcon from "@/components/icons/MenuIcon";
 const Navbar = () => {
   const navigate = useNavigate();
   const navigateToSignIn = () => {
     navigate("/auth");
   };
+  const dispatch = useDispatch();
+  const sidebarOpen = useSelector(
+    (state: RootState) => state.SidebarSlice.isOpen
+  );
   return (
     <div className="w-full flex gap-[45px] items-center bg-[#F9F9F9] py-[25px] border-b-[1px] border-[#D9D9D9]">
-      <button className="w-[24px] ml-[38px] h-[24px] !bg-[transparent] cursor-pointer">
-        <img src={bars} alt="" />
+      <button
+        onClick={() => dispatch(setSidebarOpen(!sidebarOpen))}
+        className="w-[24px] ml-[38px] h-[24px] !bg-[transparent] cursor-pointer"
+      >
+        <MenuIcon isActive={sidebarOpen} />
       </button>
       <div className={`${styles.Container} flex items-center gap-[42px]`}>
         <div className="flex gap-[45px] items-center">
@@ -21,12 +31,7 @@ const Navbar = () => {
             <img src={logo} alt="" />
           </Link>
 
-          <button
-            className={`${styles.PrimaryButton} flex items-center gap-[12px] `}
-          >
-            <img src={book} alt="" />
-            Kurslar
-          </button>
+          <Courses />
         </div>
         <div>
           <Search />
@@ -37,7 +42,7 @@ const Navbar = () => {
           </button>
           <button
             onClick={navigateToSignIn}
-            className={`${styles.PrimaryButton}`}
+            className={`${styles.BlueButton} flex items-center gap-[12px]`}
           >
             Boshlash
           </button>

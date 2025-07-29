@@ -1,15 +1,15 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-type pages = "sign-in" | "registration" | "reset-password"
+type pages = "sign-in" | "registration" | "reset-password";
 
 interface initilaState {
-      page: pages
-      step: number
+  page: pages;
+  step: number;
 }
 const initialState: initilaState = {
-      page: "sign-in",
-      step: 1
-}
+  page: "sign-in",
+  step: 1,
+};
 
 const AuthenticationSlice = createSlice({
       name: "Authentication",
@@ -25,10 +25,7 @@ const AuthenticationSlice = createSlice({
       }
 })
 
-export const {
-      setActiveAuthPage,
-      setActiveAuthStep
-} = AuthenticationSlice.actions;
-
+export const { setActiveAuthPage, setActiveAuthStep } =
+  AuthenticationSlice.actions;
 
 export default AuthenticationSlice.reducer;
