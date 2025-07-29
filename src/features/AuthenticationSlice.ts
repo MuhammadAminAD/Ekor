@@ -1,31 +1,48 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-type pages = "sign-in" | "registration" | "reset-password";
+type Pages = "sign-in" | "registration" | "reset-password";
 
-interface initilaState {
-  page: pages;
-  step: number;
+interface AuthState {
+      page: Pages;
+      step: number;
+      errors: { [key: string]: string | undefined };
+      data: { [key: string]: string | undefined };
 }
-const initialState: initilaState = {
-  page: "sign-in",
-  step: 1,
+
+const initialState: AuthState = {
+      page: "sign-in",
+      step: 1,
+      errors: {},
+      data: {},
 };
 
 const AuthenticationSlice = createSlice({
       name: "Authentication",
-      initialState: initialState,
+      initialState,
       reducers: {
-            setActiveAuthPage: (state, action: PayloadAction<pages>) => {
-                  state.page = action.payload
-                  state.step = 1
+            setActiveAuthPage: (state, action: PayloadAction<Pages>) => {
+                  state.page = action.payload;
+                  state.step = 1;
+                  state.errors = {};
+                  state.data = {};
             },
             setActiveAuthStep: (state, action: PayloadAction<number>) => {
-                  state.step = action.payload
+                  state.step = action.payload;
             },
-      }
-})
+            setAuthErrors: (state, action: PayloadAction<{ [key: string]: string | undefined }>) => {
+                  state.errors = action.payload;
+            },
+            setAuthData: (state, action: PayloadAction<{ [key: string]: string | undefined }>) => {
+                  state.data = action.payload;
+            },
+      },
+});
 
-export const { setActiveAuthPage, setActiveAuthStep } =
-  AuthenticationSlice.actions;
+export const {
+      setActiveAuthPage,
+      setActiveAuthStep,
+      setAuthErrors,
+      setAuthData,
+} = AuthenticationSlice.actions;
 
 export default AuthenticationSlice.reducer;

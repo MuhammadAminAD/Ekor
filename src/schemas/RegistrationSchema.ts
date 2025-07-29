@@ -35,7 +35,7 @@ export const RegistrationSchema = z
                   .string()
                   .min(6, "Parolni tasdiqlash kamida 6 ta belgidan iborat bo‘lishi kerak"),
 
-            gender: z.enum(["male", "female"]),
+            gender: z.enum(["Male", "Female"]),
       })
       .refine((data) => data.password === data.confirmPassword, {
             path: ["confirmPassword"],

@@ -9,7 +9,7 @@ type InputLabelProps<T extends FieldValues, K extends Path<T> = Path<T>> = {
       placeholder: string;
       uid: string;
       field: ControllerRenderProps<T, K>;
-      error?: FieldError;
+      error?: FieldError | string | undefined;
       type?: "text" | "password" | "email";
 };
 
