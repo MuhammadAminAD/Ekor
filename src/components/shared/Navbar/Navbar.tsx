@@ -2,9 +2,9 @@ import { styles } from "@/styles/index.styles";
 import bars from "@/assets/icons/menu.svg";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "@/assets/icons/logo.svg";
-import book from "@/assets/icons/book.svg";
 import cart from "@/assets/icons/shopping-cart.svg";
 import Search from "./Search";
+import Courses from "./Courses";
 const Navbar = () => {
   const navigate = useNavigate();
   const navigateToSignIn = () => {
@@ -21,12 +21,7 @@ const Navbar = () => {
             <img src={logo} alt="" />
           </Link>
 
-          <button
-            className={`${styles.PrimaryButton} flex items-center gap-[12px] `}
-          >
-            <img src={book} alt="" />
-            Kurslar
-          </button>
+          <Courses/>
         </div>
         <div>
           <Search />
@@ -37,7 +32,7 @@ const Navbar = () => {
           </button>
           <button
             onClick={navigateToSignIn}
-            className={`${styles.PrimaryButton}`}
+            className={`${styles.BlueButton} flex items-center gap-[12px]`}
           >
             Boshlash
           </button>

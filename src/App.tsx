@@ -1,4 +1,4 @@
-import Navbar from "./components/shared/Navbar";
+import Navbar from "./components/shared/Navbar/Navbar";
 import Sidebar from "./components/shared/Sidebar";
 import AppRouter from "./router/AppRouter";
 import { styles } from "./styles/index.styles";
