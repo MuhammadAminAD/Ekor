@@ -92,4 +92,11 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+    :root {
+    --chart-1: #006AFF;
+  }
+ 
+  .dark {
+    --chart-1: #006AFF;
+  }
 }
