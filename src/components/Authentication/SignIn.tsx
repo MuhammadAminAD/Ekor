@@ -16,6 +16,11 @@ import { setToken } from "@/features/TokenSlice";
 import Loader from "../ui/Loader";
 
 export default function SignIn() {
+      function AuthGoogle() {
+            window.location.href = "http://localhost:3000/api/v1/auth/google"
+      }
+
+
       const form = useForm<SignInSchemaType>({
             resolver: zodResolver(SignInSchema),
             defaultValues: {
@@ -115,7 +120,9 @@ export default function SignIn() {
                         </div>
 
                         <div className="grid grid-cols-2 gap-x-7.5">
-                              <button className="flex items-center gap-5 py-6 w-full border-1  border-disabled justify-center rounded-2xl active:scale-90 duration-100"><GoogleIcon />Google orqali tizimga kiring</button>
+                              <button onClick={() => AuthGoogle()} className="flex items-center gap-5 py-6 w-full border-1  border-disabled justify-center rounded-2xl active:scale-90 duration-100">
+                                    <GoogleIcon />Google orqali tizimga kiring
+                              </button>
                               <button className="flex items-center gap-5 py-6 w-full border-1  border-disabled justify-center rounded-2xl active:scale-90 duration-100"><FacebookIcon />Facebook orqali tizimga kiring</button>
                         </div>
 
