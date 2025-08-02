@@ -4,4 +4,5 @@ export const styles = {
       MainButton: 'w-full cursor-pointer py-5 rounded-[15px] bg-[#80B5FF] text-[24px] font-bold text-[#F9F9F9] mt-7.5 hover:bg-main-blue duration-300 ease-in flex items-center justify-center',
       BlueButton: 'py-[12px] px-[20px] rounded-[15px] bg-[#006AFF] hover:bg-[#0056d1] text-[20px] font-medium text-[#F9F9F9] cursor-pointer  duration-300 ease-in',
       text32_500: "text-3xl font-black text-center",
+      spikerBtn : "font-normal text-[20px] text-[#999999] leading-[150%] cursor-pointer hover:text-[#006AFF] border-b-2 border-[#1111110F] pb-[20px] hover:border-[#006AFF]"
 } 

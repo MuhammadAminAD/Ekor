@@ -1,4 +1,4 @@
-import type { ICourses, IMenuCategory, ISidebar } from "@/types/index.types";
+import type { ICourses, IMenuCategory, ISidebar, IStatsDashboard } from "@/types/index.types";
 import SendIcon from "@/components/icons/SendIcon";
 import TeacherIcon from "@/components/icons/TeacherIcon";
 import ElementIcon from "@/components/icons/ElementIcon";
@@ -425,3 +425,34 @@ export const courses: ICourses[] = [
     },
   },
 ];
+
+import walletIcons from "@/assets/icons/walletIcons.svg"
+import teachericons from "@/assets/icons/teacherIcons.svg"
+import bookIcons from "@/assets/icons/bookIcons.svg"
+import moneysIcons from '@/assets/icons/moneysIcons.svg'
+export const StatsDashboardData: IStatsDashboard[] = [
+  {
+    id: 0,
+    icons: walletIcons,
+    title: "Umumiy balans",
+    blueText: "15 500 000 UZS"
+  },
+  {
+    id: 1,
+    icons: teachericons,
+    title: "O’quvchilar soni",
+    blueText: "215"
+  },
+  {
+    id: 2,
+    icons: bookIcons,
+    title: "Kurslar soni",
+    blueText: "341"
+  },
+  {
+    id: 2,
+    icons: moneysIcons,
+    title: "Ro’yxatdan o’tilgan kurslar",
+    blueText: "10"
+  },
+] 

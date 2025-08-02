@@ -64,3 +64,10 @@ interface ILanguage {
     [key: string]: ICourseLessons;
   };
 }
+
+export interface IStatsDashboard {
+  id : number,
+  icons : string,
+  title : string,
+  blueText : string
+}
