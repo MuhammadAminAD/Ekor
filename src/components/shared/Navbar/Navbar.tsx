@@ -40,12 +40,14 @@ const Navbar = () => {
           <button className="cursor-pointer">
             <img src={cart} alt="" />
           </button>
+
           <button
             onClick={navigateToSignIn}
             className={`${styles.BlueButton} flex items-center gap-[12px]`}
           >
             Boshlash
           </button>
+          <Link to={'/user'}>Userni ko'rish</Link>
         </div>
       </div>
     </div>
