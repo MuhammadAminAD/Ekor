@@ -1,3 +1,4 @@
+import { setToken } from "@/features/TokenSlice";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -7,20 +8,21 @@ const GoogleAuth = () => {
 
     useEffect(() => {
         const query = new URLSearchParams(location.search);
-        const token = query.get("token");
+        const accessToken = query.get("token");
         const email = query.get("email");
+        const token = { accessToken: accessToken }
 
         if (!token || !email) {
             navigate("/auth")
             return;
         }
 
-        localStorage.setItem("token", token);
+        setToken(token)
 
         navigate("/")
     }, [location]);
 
     return null
-};
+};      
 
 export default GoogleAuth;

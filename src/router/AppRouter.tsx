@@ -3,7 +3,7 @@ import Home from "../pages/Home";
 import Authentication from "@/pages/Authentication";
 import User from "@/pages/User";
 import CoursePage from "@/pages/CoursePage";
-import GoogleAuth from "@/pages/GoogleAuth";
+import GoogleAuth from "@/router/GoogleAuth";
 
 export default function AppRouter() {
   return (
