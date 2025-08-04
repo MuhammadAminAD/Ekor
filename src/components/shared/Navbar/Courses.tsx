@@ -31,7 +31,7 @@ const Courses = () => {
   return (
     <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
       <DropdownMenuTrigger asChild>
-        <button className={`${styles.BlueButton} flex items-center gap-[12px]`}>
+        <button className={`${styles.BlueButton} flex items-center justify-center gap-[10px]`}>
           <img src={book} alt="book icon" />
           Kurslar
         </button>
