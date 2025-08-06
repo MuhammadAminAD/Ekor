@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "O'zbekiston",
+        "value": 99,
+        "users": 100356
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[66.0, 37.0], [67.0, 37.0], [67.0, 38.0], [66.0, 38.0], [66.0, 37.0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rossiya",
+        "value": 92,
+        "users": 94404
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[37.6, 55.7], [38.6, 55.7], [38.6, 56.7], [37.6, 56.7], [37.6, 55.7]]]
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 
+
 body {
   font-family: 'SF Pro Display', sans-serif;
 }
@@ -12,6 +13,7 @@ body {
 @theme inline {
   --color-main-blue: #006AFF;
   --color-main-black: #1C1C1C;
+  --color-main-gray: #999999;
   --color-disabled: #999;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -91,12 +93,5 @@ body {
 
   body {
     @apply bg-background text-foreground;
-  }
-    :root {
-    --chart-1: #006AFF;
-  }
- 
-  .dark {
-    --chart-1: #006AFF;
   }
 }

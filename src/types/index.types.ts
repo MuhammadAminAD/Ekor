@@ -66,8 +66,19 @@ interface ILanguage {
 }
 
 export interface IStatsDashboard {
-  id : number,
-  icons : string,
-  title : string,
-  blueText : string
+  id: number,
+  icons: string,
+  title: string,
+  blueText: string
+}
+
+export interface ICoursestabsData {
+  id: number,
+  coursesIcons : string
+  courseName: string,
+  date: string,
+  price: string,
+  status: string,
+  statusIconsColor: string,
+  moreDetails: string,
 }
