@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import Authentication from "@/pages/Authentication";
 import User from "@/pages/User";
 import CoursePage from "@/pages/CoursePage";
+import CourseInside from "@/pages/CourseInside";
 
 export default function AppRouter() {
   return (
@@ -12,6 +13,7 @@ export default function AppRouter() {
         <Route element={<Home />} path="/" />
         <Route element={<CoursePage />} path="/course" />
         <Route element={<User />} path="/user" />
+        <Route element={<CourseInside />} path="/cours-inside/:id" />
       </Routes>
     </>
   );
