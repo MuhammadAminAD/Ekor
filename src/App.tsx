@@ -13,7 +13,7 @@ export default function App() {
 
   const sidebarWidth = sidebarOpen ? 240 : 100;
   const { pathname } = useLocation();
-  const showSidebar = pathname !== "/auth" ? true : sidebarOpen;
+  const showSidebar = pathname === "/" ? true : sidebarOpen;
 
   return (
     <>
