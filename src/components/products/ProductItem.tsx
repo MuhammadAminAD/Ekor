@@ -2,9 +2,12 @@ import star from "@/assets/icons/star.svg";
 import TeacherIcon from "../icons/TeacherIcon";
 import FrameIcon from "../icons/FrameIcon";
 import img from "@/assets/img/BiznesCoursePicture.png";
+import { useNavigate } from "react-router-dom";
 const ProductItem = () => {
+  const navigate = useNavigate();
+  
   return (
-    <div className="cursor-pointer">
+    <div onClick={() => navigate('/course')} className="cursor-pointer">
       <img src={img} alt="" />
       <div className="flex justify-between mt-[20px] ">
         <h2 className="max-w-[336px] font-medium text-[20px] leading-[100%] text-[#006AFF] ">

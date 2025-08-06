@@ -543,3 +543,39 @@ export const FinanceStatsDashboardData: IStatsDashboard[] = [
     blueText: "10 000 000",
   }
 ]
+
+import book from '@/assets/icons/book-saved.svg'
+import clock from '@/assets/icons/clock1.svg'
+import video from '@/assets/icons/video1.svg'
+import award from '@/assets/icons/award1.svg'
+import translate from '@/assets/icons/translate1.svg'
+
+export const courseItem = [
+  {
+    id: 0,
+    icon: book,
+    title: 'Umrbod egalik qilish imkoniyati',
+  },
+  {
+    id: 1,
+    icon: clock,
+    title: '12,5 soatlik videodarslik',
+  },
+  {
+    id: 2,
+    icon: video,
+    title: '7 ta videolar',
+  },
+  {
+    id: 3,
+    icon: award,
+    title: 'Kursni tugatganlik haqida sertifikat',
+  },
+  {
+    id: 4,
+    icon: translate,
+    title: 'O’zbek tili',
+  },
+]
+
+export const tabsMenu = ['Product Details', 'Rating & Reviews', 'FAQs']
