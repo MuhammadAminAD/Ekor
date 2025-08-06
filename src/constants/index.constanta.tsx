@@ -1,4 +1,4 @@
-import type { ICourses, IMenuCategory, ISidebar } from "@/types/index.types";
+import type { ICourses, ICoursestabsData, IMenuCategory, ISidebar, IStatsDashboard } from "@/types/index.types";
 import SendIcon from "@/components/icons/SendIcon";
 import TeacherIcon from "@/components/icons/TeacherIcon";
 import ElementIcon from "@/components/icons/ElementIcon";
@@ -426,6 +426,123 @@ export const courses: ICourses[] = [
   },
 ];
 
+import walletIcons from "@/assets/icons/walletIcons.svg"
+import teachericons from "@/assets/icons/teacherIcons.svg"
+import bookIcons from "@/assets/icons/bookIcons.svg"
+import moneysIcons from '@/assets/icons/moneysIcons.svg'
+export const StatsDashboardData: IStatsDashboard[] = [
+  {
+    id: 0,
+    icons: walletIcons,
+    title: "Umumiy balans",
+    blueText: "15 500 000 UZS"
+  },
+  {
+    id: 1,
+    icons: teachericons,
+    title: "O’quvchilar soni",
+    blueText: "215"
+  },
+  {
+    id: 2,
+    icons: bookIcons,
+    title: "Kurslar soni",
+    blueText: "341"
+  },
+  {
+    id: 2,
+    icons: moneysIcons,
+    title: "Ro’yxatdan o’tilgan kurslar",
+    blueText: "10"
+  },
+]
+
+//
+import coursesIcons from "@/assets/icons/coursesTabsBookIcons.svg"
+export const buyCoursesTabsData: ICoursestabsData[] = [
+  {
+    id: 0,
+    coursesIcons,
+    courseName: "Biznesda sherikchilik va halollik asoslari",
+    date: "Mar 24, 2022",
+    price: "134 000",
+    status: "Aktiv",
+    statusIconsColor: "bg-[#0CC14A]",
+    moreDetails: "Batafsil",
+  },
+  {
+    id: 1,
+    coursesIcons,
+    courseName: "Biznesda CRM sistemadan foydalanish va o‘rnatish",
+    date: "Mar 24, 2022",
+    price: "10 000",
+    status: "Aktiv",
+    statusIconsColor: "bg-[#0CC14A]",
+    moreDetails: "Batafsil",
+  },
+  {
+    id: 2,
+    coursesIcons,
+    courseName: "LTV ni qanday qilib 2 karra uzaytirish mumkin?",
+    date: "Apr 12, 2022",
+    price: "55 000",
+    status: "Jarayonda",
+    statusIconsColor: "bg-[#F19D3B]",
+    moreDetails: "Batafsil",
+  },
+  {
+    id: 3,
+    coursesIcons,
+    courseName: "Abdulla Oripovning 100 ta maqolasi",
+    date: "Apr 12, 2022",
+    price: "75 000",
+    status: "Jarayonda",
+    statusIconsColor: "bg-[#F19D3B]",
+    moreDetails: "Batafsil",
+  },
+  {
+    id: 4,
+    coursesIcons,
+    courseName: "Alisher Navoiy asarlaridan 100 ta maqola",
+    date: "Apr 12, 2022",
+    price: "95 000",
+    status: "Jarayonda",
+    statusIconsColor: "bg-[#F19D3B]",
+    moreDetails: "Batafsil",
+  },
+]
+
+
+//
+import moneyRevice from "@/assets/icons/money-recive.svg"
+import walletMoney from "@/assets/icons/money-recive.svg"
+import cards from "@/assets/icons/money-recive.svg"
+export const FinanceStatsDashboardData: IStatsDashboard[] = [
+  {
+    id: 0,
+    icons: moneyRevice,
+    title: "Kurslardan daromadlar",
+    blueText: "15 500 000",
+  },
+  {
+    id: 1,
+    icons: walletMoney,
+    title: "Hamyondagi umumiy balans",
+    blueText: "29 000",
+  },
+  {
+    id: 2,
+    icons: cards,
+    title: "Kartalarimdagi balans",
+    blueText: "159 000",
+  },
+  {
+    id: 3,
+    icons: moneyRevice,
+    title: "Umumiy chiqimlar",
+    blueText: "10 000 000",
+  }
+]
 
 import book from '@/assets/icons/book-saved.svg'
 import clock from '@/assets/icons/clock1.svg'
