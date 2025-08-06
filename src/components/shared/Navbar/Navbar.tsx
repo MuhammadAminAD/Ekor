@@ -8,8 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@/app/store";
 import { setSidebarOpen } from "@/features/SidebarSlice";
 import MenuIcon from "@/components/icons/MenuIcon";
-import filterIcon from "@/assets/icons/sort.svg";
 import LangDropDown from "./LangDropDown";
+import Filter from "./Filter";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -40,10 +40,7 @@ const Navbar = () => {
           <Search />
         </div>
         <div className="flex items-center lg:gap-[30px] gap-[20px]">
-          <button className="lg:flex hidden items-center gap-[15px] font-medium text-[#1C1C1C] text-[16px] leading-[100%] cursor-pointer">
-            <img src={filterIcon} alt="" />
-            Filter
-          </button>
+          <Filter/>
           <button className="cursor-pointer">
             <img src={cart} alt="" />
           </button>
@@ -54,7 +51,7 @@ const Navbar = () => {
           >
             Boshlash
           </button>
-          {/* <Link to={'/user'}>Userni ko'rish</Link> */}
+        
         </div>
       </div>
     </div>
