@@ -112,7 +112,9 @@ const Filter = () => {
                                              checked:text-[#006AFF]
                                                flex items-center justify-center
                                              checked:after:content-['✔']
-                                             checked:after:text-[#006AFF]"
+                                             checked:after:text-[#006AFF]
+                                             cursor-pointer
+                                             "
                                 />
                               </label>
                             );

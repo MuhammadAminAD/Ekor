@@ -1,8 +1,28 @@
-import type { ICourses, ICoursestabsData, IMenuCategory, ISidebar, IStatsDashboard } from "@/types/index.types";
+import type {
+  ICourses,
+  ICoursestabsData,
+  IMenuCategory,
+  ISidebar,
+  IStatsDashboard,
+  IUserTabs,
+} from "@/types/index.types";
 import SendIcon from "@/components/icons/SendIcon";
 import TeacherIcon from "@/components/icons/TeacherIcon";
 import ElementIcon from "@/components/icons/ElementIcon";
 import FrameIcon from "@/components/icons/FrameIcon";
+import book from "@/assets/icons/book-saved.svg";
+import clock from "@/assets/icons/clock1.svg";
+import video from "@/assets/icons/video1.svg";
+import award from "@/assets/icons/award1.svg";
+import translate from "@/assets/icons/translate1.svg";
+import walletIcons from "@/assets/icons/walletIcons.svg";
+import teachericons from "@/assets/icons/teacherIcons.svg";
+import bookIcons from "@/assets/icons/bookIcons.svg";
+import moneysIcons from "@/assets/icons/moneysIcons.svg";
+import coursesIcons from "@/assets/icons/coursesTabsBookIcons.svg";
+import moneyRevice from "@/assets/icons/money-recive.svg";
+import walletMoney from "@/assets/icons/money-recive.svg";
+import cards from "@/assets/icons/money-recive.svg";
 
 export const sideBar: ISidebar[] = [
   {
@@ -27,6 +47,31 @@ export const sideBar: ISidebar[] = [
   },
 ];
 
+
+export const userTabs:IUserTabs[] = [
+  {
+    title: "Profilni tahrirlash",
+  },
+  {
+    title: "Umumiy Profil",
+  },
+  {
+    title: "Mening darslarim",
+  },
+  {
+    title: "Shaxsiy kabinet",
+  },
+  {
+    title: "Men yuklagan kurslar",
+    subTitle: "(Spiker bo'lganda)",
+  },
+  {
+    title: "Spiker panel",
+  },
+  {
+    title: "Profildan chiqish",
+  },
+];
 
 export const menuCategories: IMenuCategory[] = [
   {
@@ -129,7 +174,6 @@ export const menuCategories: IMenuCategory[] = [
     ],
   },
 ];
-
 
 export const courses: ICourses[] = [
   {
@@ -426,39 +470,35 @@ export const courses: ICourses[] = [
   },
 ];
 
-import walletIcons from "@/assets/icons/walletIcons.svg"
-import teachericons from "@/assets/icons/teacherIcons.svg"
-import bookIcons from "@/assets/icons/bookIcons.svg"
-import moneysIcons from '@/assets/icons/moneysIcons.svg'
+
 export const StatsDashboardData: IStatsDashboard[] = [
   {
     id: 0,
     icons: walletIcons,
     title: "Umumiy balans",
-    blueText: "15 500 000 UZS"
+    blueText: "15 500 000 UZS",
   },
   {
     id: 1,
     icons: teachericons,
     title: "O’quvchilar soni",
-    blueText: "215"
+    blueText: "215",
   },
   {
     id: 2,
     icons: bookIcons,
     title: "Kurslar soni",
-    blueText: "341"
+    blueText: "341",
   },
   {
     id: 2,
     icons: moneysIcons,
     title: "Ro’yxatdan o’tilgan kurslar",
-    blueText: "10"
+    blueText: "10",
   },
-]
+];
 
-//
-import coursesIcons from "@/assets/icons/coursesTabsBookIcons.svg"
+
 export const buyCoursesTabsData: ICoursestabsData[] = [
   {
     id: 0,
@@ -510,13 +550,9 @@ export const buyCoursesTabsData: ICoursestabsData[] = [
     statusIconsColor: "bg-[#F19D3B]",
     moreDetails: "Batafsil",
   },
-]
+];
 
 
-//
-import moneyRevice from "@/assets/icons/money-recive.svg"
-import walletMoney from "@/assets/icons/money-recive.svg"
-import cards from "@/assets/icons/money-recive.svg"
 export const FinanceStatsDashboardData: IStatsDashboard[] = [
   {
     id: 0,
@@ -541,41 +577,36 @@ export const FinanceStatsDashboardData: IStatsDashboard[] = [
     icons: moneyRevice,
     title: "Umumiy chiqimlar",
     blueText: "10 000 000",
-  }
-]
+  },
+];
 
-import book from '@/assets/icons/book-saved.svg'
-import clock from '@/assets/icons/clock1.svg'
-import video from '@/assets/icons/video1.svg'
-import award from '@/assets/icons/award1.svg'
-import translate from '@/assets/icons/translate1.svg'
 
 export const courseItem = [
   {
     id: 0,
     icon: book,
-    title: 'Umrbod egalik qilish imkoniyati',
+    title: "Umrbod egalik qilish imkoniyati",
   },
   {
     id: 1,
     icon: clock,
-    title: '12,5 soatlik videodarslik',
+    title: "12,5 soatlik videodarslik",
   },
   {
     id: 2,
     icon: video,
-    title: '7 ta videolar',
+    title: "7 ta videolar",
   },
   {
     id: 3,
     icon: award,
-    title: 'Kursni tugatganlik haqida sertifikat',
+    title: "Kursni tugatganlik haqida sertifikat",
   },
   {
     id: 4,
     icon: translate,
-    title: 'O’zbek tili',
+    title: "O’zbek tili",
   },
-]
+];
 
-export const tabsMenu = ['Product Details', 'Rating & Reviews', 'FAQs']
+export const tabsMenu = ["Product Details", "Rating & Reviews", "FAQs"];
