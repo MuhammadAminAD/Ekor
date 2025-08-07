@@ -1,4 +1,4 @@
-import type { ICourses, ICoursestabsData, IMenuCategory, ISidebar, IStatsDashboard } from "@/types/index.types";
+import type { ICourses, ICoursestabsData, IfinanceCards, IfinanceTabsStudents, IMenuCategory, ISidebar, IStatsDashboard } from "@/types/index.types";
 import SendIcon from "@/components/icons/SendIcon";
 import TeacherIcon from "@/components/icons/TeacherIcon";
 import ElementIcon from "@/components/icons/ElementIcon";
@@ -579,3 +579,149 @@ export const courseItem = [
 ]
 
 export const tabsMenu = ['Product Details', 'Rating & Reviews', 'FAQs']
+export const financeTabsStudentsData: IfinanceTabsStudents[] = [
+  {
+    id: 1,
+    name: "Abonatidúce-Samutar",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 12,
+    activity: "2:31:45",
+    sum: "1 250 000"
+  },
+  {
+    id: 2,
+    name: "Savhatinou Renis",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 27,
+    activity: "5:08:23",
+    sum: "1 250 000"
+  },
+  {
+    id: 3,
+    name: "Samutarov Atrasi",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 6,
+    activity: "1:12:51",
+    sum: "1 250 000"
+  },
+  {
+    id: 4,
+    name: "Turgonov Javel",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 34,
+    activity: "4:43:12",
+    sum: "1 250 000"
+  },
+  {
+    id: 5,
+    name: "Ardolatiova Zirina",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 6,
+    activity: "1:54:11",
+    sum: "1 250 000"
+  },
+  {
+    id: 6,
+    name: "Mehradov Ovke",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 3,
+    activity: "0:27:52",
+    sum: "1 250 000"
+  },
+  {
+    id: 7,
+    name: "Taiseva Luhr",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 18,
+    activity: "1:01:11",
+    sum: "1 250 000"
+  },
+  {
+    id: 8,
+    name: "Andrei Anan",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 12,
+    activity: "1:01:11",
+    sum: "1 250 000"
+  },
+  {
+    id: 9,
+    name: "Rodyno Janše",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 9,
+    activity: "1:01:11",
+    sum: "1 250 000"
+  },
+  {
+    id: 10,
+    name: "Zvidovaný Novur",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 16,
+    activity: "1:01:11",
+    sum: "1 250 000"
+  },
+  {
+    id: 11,
+    name: "Turgonov Javel",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 34,
+    activity: "4:43:12",
+    sum: "1 250 000"
+  },
+  {
+    id: 12,
+    name: "Turgonov Javel",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 34,
+    activity: "4:43:12",
+    sum: "1 250 000"
+  },
+  {
+    id: 13,
+    name: "Turgonov Javel",
+    phone: "+998 99 123 45 67",
+    firstUse: "KS 23 2021 56 35",
+    logins: 34,
+    activity: "4:43:12",
+    sum: "1 250 000"
+  },
+]
+
+//
+import payCardIcons from "@/assets/icons/financePayCardIcons.svg"
+export const financeCardsData : IfinanceCards[] = [
+  {
+    id: 1,
+    icons: payCardIcons,
+    cardNum: "9800 ***** 1261",
+    date: "23-May 2022 12:58",
+    summa: "260 000",
+  },
+  {
+    id: 2,
+    icons: payCardIcons,
+    cardNum: "Elektron hamyon",
+    date: "23-May 2022 12:58",
+    summa: "1260 000",
+  },
+  {
+    id: 3,
+    icons: payCardIcons,
+    cardNum: "9800 ***** 1261",
+    date: "23-May 2022 12:58",
+    summa: "260 000",
+    payDate : "21-May 2022"
+  },
+]

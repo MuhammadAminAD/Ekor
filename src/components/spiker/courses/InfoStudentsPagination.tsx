@@ -4,20 +4,20 @@ import {
     PaginationItem,
 } from "@/components/ui/pagination"
 import { cn } from "@/lib/utils"
+import arrowSquareLeftIcons from "@/assets/icons/arrow-square-left.svg"
 import ArrowSquareRight from "@/components/icons/ArrowSquareRight"
-
 type Props = {
     currentPage: number
     totalPages: number
     onNext: () => void
     onPrevious: () => void
 }
-export default function CoursesTabsPagination({ onNext, onPrevious, totalPages, currentPage }: Props) {
+export default function InfoStudentsPagination({ currentPage, onNext, onPrevious, totalPages }: Props) {
     return (
         <Pagination>
             <PaginationContent className={cn(`gap-[20px]`)}>
                 <PaginationItem onClick={onPrevious}>
-                    <ArrowSquareRight style="stroke-[#80B5FF] w-[24px] h-[24px] rotate-180" />
+                    <img src={arrowSquareLeftIcons} alt="prevIcons" />
                 </PaginationItem>
                 {
                     Array.from({ length: totalPages }, (_, index) => {

@@ -5,7 +5,7 @@ export const styles = {
   BlueButton: 'py-[12px] px-[20px] rounded-[15px] bg-[#006AFF] hover:bg-[#0056d1] text-[20px] font-medium text-[#F9F9F9] cursor-pointer  duration-300 ease-in',
   text32_500: "text-3xl font-black text-center",
   spikerBtn: "font-normal text-[20px]  leading-[150%] cursor-pointer hover:text-[#006AFF] border-b-2  pb-[20px] hover:border-[#006AFF]",
-  studentsTitle: "font-semibold text-[20px] text-[#1C1C1C] leading-[100%]",
+  studentsTitle: "font-semibold text-[20px] text-main-black leading-[100%]",
   studentsChartDesc: "text-[16px] font-medium leading-[100%] text-[#999999]",
   studentsChartPercent: "text-[16px] font-extrabold leading-[100%] text-[#1C1C1C]",
   studentsChartBox: "w-[24px] h-[24px]  rounded-[4px]",

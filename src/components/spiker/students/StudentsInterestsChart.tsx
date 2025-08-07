@@ -51,7 +51,7 @@ export function StudentsInterestsChart() {
                             tickLine={false}
                             tickMargin={10}
                             axisLine={false}
-                            className="text-[16px] font-medium fill-[#999999] leading-[100%]"
+                            className="text-[14px] font-medium fill-[#999999] leading-[100%]"
                         />
                         <ChartTooltip
                             cursor={false}

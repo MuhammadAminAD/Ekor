@@ -5,6 +5,7 @@ import TokenSlice from "@/features/TokenSlice.ts"
 import { baseApi } from "@/services/baseApi";
 import SpikerTabsSlice from "@/features/SpiketTabsSlice.ts";
 import FilterSlice from "@/features/FilterSlice"
+import CoursesTabsSlice from '@/features/CoursesTabsSlice.ts'
 export const store = configureStore({
       reducer: {
             FilterSlice: FilterSlice,
@@ -12,6 +13,7 @@ export const store = configureStore({
             SidebarSlice: SidebarSlice,
             TokenSlice: TokenSlice,
             SpikerTabsSlice: SpikerTabsSlice,
+            CoursesTabsSlice: CoursesTabsSlice,
             [baseApi.reducerPath]: baseApi.reducer
       },
 
