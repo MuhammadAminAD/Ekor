@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './app/store.ts'
 import './i18n/i18next.config.ts'
+import 'leaflet/dist/leaflet.css'
+
 
 createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
