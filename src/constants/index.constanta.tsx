@@ -193,8 +193,8 @@ export const courses: ICourses[] = [
       fiveStar: 35085,
     },
     courseMembers: 114554,
-    courseLessons: {
-      firstLesson: {
+    courseLessons: [
+       {
         lessonName: "Strategik marketing",
         subLessons: [
           {
@@ -211,7 +211,7 @@ export const courses: ICourses[] = [
           },
         ],
       },
-      secondLesson: {
+       {
         lessonName: "SWOT analiz qilish",
         subLessons: [
           {
@@ -228,7 +228,7 @@ export const courses: ICourses[] = [
           },
         ],
       },
-      thirdLesson: {
+       {
         lessonName: "Ish muhiti",
         subLessons: [
           {
@@ -245,7 +245,7 @@ export const courses: ICourses[] = [
           },
         ],
       },
-      fourthLesson: {
+     {
         lessonName: "Biznesda politika qanday bo'ladi",
         subLessons: [
           {
@@ -262,7 +262,7 @@ export const courses: ICourses[] = [
           },
         ],
       },
-      fifthLesson: {
+       {
         lessonName: "Bir burun qoidasi",
         subLessons: [
           {
@@ -278,11 +278,11 @@ export const courses: ICourses[] = [
             file: "/",
           },
         ],
-      },
-    },
+      }
+    ],
 
-    languages: {
-      uz: {
+    languages: [
+       {
         courseName: "Biznesda sherikchilik va halollik asoslari",
         courseAbout:
           "Kompaniya daromadini 2 karraga ko'tarishni istaysizmi? Biznes egalari, top menejer, tadbirkorlar uchun Husan Mamasaidovning 'Strategik marketing' nomli intensiv kurs./n-Deyarli chiqimsiz biznes qilishni iloji bormi? /n-Telegramda biznes boshlash -Telegram orqali passiv daromadga kirish -Telegramda tadbirkorni imkoniyatlari...",
@@ -301,8 +301,8 @@ export const courses: ICourses[] = [
           "IT sohasidagi katta kompaniyalar CTOsi",
           "Senior leveldagi dasturchilar",
         ],
-        courseLessons: {
-          firstLesson: {
+        courseLessons: [
+           {
             lessonName: "Strategik marketing",
             subLessons: [
               {
@@ -316,7 +316,7 @@ export const courses: ICourses[] = [
               },
             ],
           },
-          secondLesson: {
+           {
             lessonName: "SWOT analiz qilish",
             subLessons: [
               {
@@ -330,7 +330,7 @@ export const courses: ICourses[] = [
               },
             ],
           },
-          thirdLesson: {
+           {
             lessonName: "Ish muhiti",
             subLessons: [
               {
@@ -344,7 +344,7 @@ export const courses: ICourses[] = [
               },
             ],
           },
-          fourthLesson: {
+           {
             lessonName: "Biznesda politika qanday bo'ladi",
             subLessons: [
               {
@@ -358,7 +358,7 @@ export const courses: ICourses[] = [
               },
             ],
           },
-          fifthLesson: {
+           {
             lessonName: "Bir burun qoidasi",
             subLessons: [
               {
@@ -372,9 +372,9 @@ export const courses: ICourses[] = [
               },
             ],
           },
-        },
+        ],
       },
-      en: {
+       {
         courseName: "Business partnership and halal principles",
         courseAbout:
           "Do you want to double your company's revenue? For business owners, top managers, and entrepreneurs, Husan Mamasaidov's intensive course titled “Strategic Marketing.” /n - Is it possible to run a business without any investment? /n - Starting a business on Telegram - Generating passive income through Telegram - Opportunities for entrepreneurs on Telegram...",
@@ -393,8 +393,8 @@ export const courses: ICourses[] = [
           "CTO of large IT companies",
           "Senior level programmers",
         ],
-        courseLessons: {
-          firstLesson: {
+        courseLessons: [
+           {
             lessonName: "Strategic marketing",
             subLessons: [
               {
@@ -408,7 +408,7 @@ export const courses: ICourses[] = [
               },
             ],
           },
-          secondLesson: {
+           {
             lessonName: "SWOT analysis",
             subLessons: [
               {
@@ -422,7 +422,7 @@ export const courses: ICourses[] = [
               },
             ],
           },
-          thirdLesson: {
+           {
             lessonName: "Work environment",
             subLessons: [
               {
@@ -436,7 +436,7 @@ export const courses: ICourses[] = [
               },
             ],
           },
-          fourthLesson: {
+           {
             lessonName: "What is politics in business?",
             subLessons: [
               {
@@ -450,7 +450,7 @@ export const courses: ICourses[] = [
               },
             ],
           },
-          fifthLesson: {
+           {
             lessonName: "One nose rule",
             subLessons: [
               {
@@ -463,11 +463,12 @@ export const courses: ICourses[] = [
                 subLessonName: "Module resources text",
               },
             ],
-          },
-        },
+          }
+        ],
       },
-    },
-  },
+    
+    ],
+  }
 ];
 
 
