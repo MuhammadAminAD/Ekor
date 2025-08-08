@@ -1,3 +1,3 @@
 export interface ITranslationTypes {
-    courses: string;
+    [key: string]: string
 }

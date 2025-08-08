@@ -34,16 +34,13 @@ export interface ICourses {
     fiveStar: number;
   };
   courseMembers: number;
-  courseLessons: {
-    [key: string]: ICourseLessons;
-  };
+  courseLessons: ICourseLessons[];
 
-  languages: {
-    [key: string]: ILanguage;
-  };
+  languages: ILanguage[];
 }
 
-interface ICourseLessons {
+export interface ICourseLessons {
+  id?: number,
   lessonName: string;
   subLessons: ISubLessons[];
 }
@@ -60,9 +57,7 @@ interface ILanguage {
   coursePrice: number;
   advantages: string[];
   toWhom: string[];
-  courseLessons: {
-    [key: string]: ICourseLessons;
-  };
+  courseLessons: ICourseLessons[];
 }
 
 export interface IStatsDashboard {
