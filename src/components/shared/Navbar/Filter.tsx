@@ -5,34 +5,23 @@ import {
 } from "@/components/ui/dropdown-menu";
 import filterIcon from "@/assets/icons/sort.svg";
 import arrowDown from "@/assets/icons/arrow-down.svg";
+import { cn } from "@/lib/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { RootState } from "@/app/store";
-import {
-  fetchFilterMenus,
-  setSelectedFilter,
-  clearFilters,
-} from "@/features/FilterSlice";
-import { cn } from "@/lib/utils";
 import { FilterMenu, FilterType } from "@/types/filter.types";
+import { RootState } from "@/app/store";
+import { clearFilters, setMenus, toggleFilter } from "@/features/FilterSlice";
+import { useGetFiltersQuery } from "@/services/FilterService";
 
 const Filter = () => {
   const dispatch = useDispatch();
-  const { menus, selected, loading } = useSelector(
+  const { menus, selected } = useSelector(
     (state: RootState) => state.FilterSlice
   );
 
-  const [expandedSections, setExpandedSections] = useState<
-    Record<string, boolean>
-  >({});
-
-  useEffect(() => {
-    dispatch(fetchFilterMenus() as any);
-  }, [dispatch]);
-
-  const handleCheckboxChange = (name: string, value: string) => {
-    dispatch(setSelectedFilter({ name, value }));
-  };
+  const [expandedSections, setExpandedSections] = useState<{
+    [key: string]: boolean;
+  }>({});
 
   const toggleSection = (name: string) => {
     setExpandedSections((prev) => ({
@@ -40,6 +29,15 @@ const Filter = () => {
       [name]: !prev[name],
     }));
   };
+
+  const { data, isLoading } = useGetFiltersQuery();
+
+  useEffect(() => {
+    if (data) {
+      console.log(data?.data.categories);
+      dispatch(setMenus(data?.data.categories));
+    }
+  }, [data, dispatch]);
 
   return (
     <div>
@@ -54,15 +52,16 @@ const Filter = () => {
         <DropdownMenuContent
           sideOffset={45}
           className={cn(
-            "w-[350px]  rounded-[15px] p-[30px] bg-white border-none shadow-[0_0_10px_0_#00000026] "
+            "w-[350px] rounded-[15px] p-[30px] bg-white border-none shadow-[0_0_10px_0_#00000026]"
           )}
         >
-          {loading ? (
+          {isLoading ? (
             <p>Yuklanmoqda...</p>
           ) : (
             <>
               {menus.map((item: FilterMenu, index: number) => {
                 const isExpanded = expandedSections[item.name];
+                const options = item.types;
 
                 return (
                   <div key={index} className="mb-3">
@@ -82,44 +81,32 @@ const Filter = () => {
 
                     {isExpanded && (
                       <div className="flex flex-col gap-[12px] border-b-[1px] border-[#D9D9D9] pb-[20px]">
-                        {(item.types || item.value)?.map(
-                          (option: FilterType, id: number) => {
-                            const isChecked =
-                              selected[item.name] === option.value;
+                        {options?.map((option: FilterType) => {
+                          const isChecked =
+                            selected[item.name] === option.value;
 
-                            return (
-                              <label
-                                key={id}
-                                className="flex items-center justify-between cursor-pointer text-[14px] leading-[150%] text-[#1C1C1C]"
-                              >
-                                <span>{option.title}</span>
-                                <input
-                                  type="checkbox"
-                                  checked={isChecked}
-                                  onChange={() =>
-                                    handleCheckboxChange(
-                                      item.name,
-                                      option.value
-                                    )
-                                  }
-                                  className=" w-[24px] h-[24px]
-                                            appearance-none
-                                             border-[1.5px]
-                                             rounded-[4px]
-                                             bg-white
-                                             border-[#1C1C1C]
-                                             checked:border-[#006AFF]
-                                             checked:text-[#006AFF]
-                                               flex items-center justify-center
-                                             checked:after:content-['✔']
-                                             checked:after:text-[#006AFF]
-                                             cursor-pointer
-                                             "
-                                />
-                              </label>
-                            );
-                          }
-                        )}
+                          return (
+                            <label
+                              key={option.id}
+                              className="flex items-center justify-between cursor-pointer text-[14px] leading-[150%] text-[#1C1C1C]"
+                            >
+                              <span>{option.title}</span>
+                              <input
+                                type="checkbox"
+                                checked={isChecked}
+                                onChange={() =>
+                                  dispatch(
+                                    toggleFilter({
+                                      category: item.name,
+                                      value: option.value,
+                                    })
+                                  )
+                                }
+                                className="w-[24px] h-[24px] appearance-none border-[1.5px] rounded-[4px] bg-white border-[#1C1C1C] checked:border-[#006AFF] checked:text-[#006AFF] flex items-center justify-center checked:after:content-['✔'] checked:after:text-[#006AFF] cursor-pointer"
+                              />
+                            </label>
+                          );
+                        })}
                       </div>
                     )}
                   </div>
@@ -129,7 +116,7 @@ const Filter = () => {
               {Object.keys(selected).length > 0 && (
                 <button
                   onClick={() => dispatch(clearFilters())}
-                  className="mt-2 flex w-[70%] mx-auto cursor-pointer  justify-center text-center text-[16px] text-[crimson]"
+                  className="mt-2 flex w-[70%] mx-auto cursor-pointer justify-center text-center text-[16px] text-[crimson]"
                 >
                   Filterni tozalash
                 </button>

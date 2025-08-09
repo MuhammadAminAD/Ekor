@@ -1,7 +1,5 @@
-import { FilterState } from "@/types/filter.types";
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { FilterMenu, FilterState } from "@/types/filter.types";
 
 const initialState: FilterState = {
   menus: [],
@@ -9,45 +7,31 @@ const initialState: FilterState = {
   loading: false,
 };
 
-export const fetchFilterMenus = createAsyncThunk(
-  "filters/fetchFilterMenus",
-  async () => {
-    const response = await fetch(
-      "https://fintechedu-server.onrender.com/api/v1/filetr/filter-menus"
-    );
-    const data = await response.json();
-    return data.data.categories;
-  }
-);
-
-const filterSlice = createSlice({
-  name: "filters",
+const FilterSlice = createSlice({
+  name: "Filter",
   initialState,
   reducers: {
-    setSelectedFilter: (
+    setMenus: (state, action: PayloadAction<FilterMenu[]>) => {
+      state.menus = action.payload;
+    },
+    toggleFilter: (
       state,
-      action: PayloadAction<{ name: string; value: string }>
+      action: PayloadAction<{ category: string; value: string }>
     ) => {
-      state.selected[action.payload.name] = action.payload.value;
+      const { category, value } = action.payload;
+      if (state.selected[category] === value) {
+        delete state.selected[category]; 
+      } else {
+        state.selected[category] = value; 
+      }
     },
     clearFilters: (state) => {
       state.selected = {};
-    },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchFilterMenus.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(fetchFilterMenus.fulfilled, (state, action) => {
-        state.menus = action.payload;
-        state.loading = false;
-      })
-      .addCase(fetchFilterMenus.rejected, (state) => {
-        state.loading = false;
-      });
+    }
   },
 });
 
-export const { setSelectedFilter, clearFilters } = filterSlice.actions;
-export default filterSlice.reducer;
+export const { setMenus, toggleFilter, clearFilters } =
+  FilterSlice.actions;
+
+export default FilterSlice.reducer;

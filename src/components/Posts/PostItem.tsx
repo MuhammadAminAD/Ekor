@@ -3,7 +3,9 @@ import TeacherIcon from "../icons/TeacherIcon";
 import FrameIcon from "../icons/FrameIcon";
 import img from "@/assets/img/BiznesCoursePicture.png";
 import { useNavigate, useParams } from "react-router-dom";
-const ProductItem = () => {
+
+const PostItem = () => {
+
   const navigate = useNavigate();
   const {id} = useParams()
   return (
@@ -37,4 +39,4 @@ const ProductItem = () => {
   );
 };
 
-export default ProductItem;
+export default PostItem;

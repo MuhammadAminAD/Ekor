@@ -1,7 +1,7 @@
-import Products from "@/components/products/Products";
+import Posts from "@/components/Posts/Posts";
 
 export default function Home() {
   return <div>
-    <Products/>
+    <Posts/>
   </div>;
 }
