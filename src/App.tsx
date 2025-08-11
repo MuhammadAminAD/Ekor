@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import Navbar from "./components/shared/Navbar";
 import Sidebar from "./components/shared/Sidebar";
 import AppRouter from "./router/AppRouter";
-import { styles } from "./styles/index.styles";
 import type { RootState } from "./app/store";
 import { useLocation } from "react-router-dom";
 import FilterCategories from "./components/Navbar/FilterCategories";
@@ -45,8 +44,9 @@ export default function App() {
       ) : null}
 
       <div
-        className={`${styles.Container} transition-all duration-300 ${isHome ? "pt-[175px]" : "pt-[100px]"
+        className={`max-w-9/10 transition-all duration-300 ${isHome ? "pt-[175px]" : "pt-[100px]"
           }`}
+        style={{ marginLeft: sidebarWidth + 10 }}
       >
         <div className="bg-white">
           <AppRouter />
