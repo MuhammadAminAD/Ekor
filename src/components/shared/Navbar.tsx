@@ -2,15 +2,15 @@ import { styles } from "@/styles/index.styles";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "@/assets/icons/logo.svg";
 import cart from "@/assets/icons/shopping-cart.svg";
-import Search from "./Search";
-import Courses from "./Courses";
+import Search from "../Navbar/Search";
+import Courses from "../Navbar/Courses";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@/app/store";
 import { setSidebarOpen } from "@/features/SidebarSlice";
 import MenuIcon from "@/components/icons/MenuIcon";
-import LangDropDown from "./LangDropDown";
-import Filter from "./Filter";
-import UserInfo from "./UserInfo";
+import LangDropDown from "../Navbar/LangDropDown";
+import Filter from "../Navbar/Filter";
+import UserInfo from "../Navbar/UserInfo";
 
 const Navbar = () => {
   const navigate = useNavigate();
