@@ -1,23 +1,26 @@
 import { configureStore } from "@reduxjs/toolkit";
-import AuthenticationSlice from "@/features/AuthenticationSlice.ts"
+import AuthenticationSlice from "@/features/AuthenticationSlice.ts";
 import SidebarSlice from "@/features/SidebarSlice.ts";
-import TokenSlice from "@/features/TokenSlice.ts"
+import TokenSlice from "@/features/TokenSlice.ts";
 import { baseApi } from "@/services/baseApi";
 import SpikerTabsSlice from "@/features/SpiketTabsSlice.ts";
-import FilterSlice from "@/features/FilterSlice"
-import FilterCategoriesSlice from "@/features/FilterCategoriesSlice"
+import FilterSlice from "@/features/FilterSlice";
+import FilterCategoriesSlice from "@/features/FilterCategoriesSlice";
+import PostsSlice from "@/features/PostsSlice";
 export const store = configureStore({
-      reducer: {
-            FilterSlice: FilterSlice,
-            FilterCategoriesSlice: FilterCategoriesSlice,
-            AuthenticationSlice: AuthenticationSlice,
-            SidebarSlice: SidebarSlice,
-            TokenSlice: TokenSlice,
-            SpikerTabsSlice: SpikerTabsSlice,
-            [baseApi.reducerPath]: baseApi.reducer
-      },
+  reducer: {
+    FilterSlice: FilterSlice,
+    FilterCategoriesSlice: FilterCategoriesSlice,
+    PostsSlice: PostsSlice,
+    AuthenticationSlice: AuthenticationSlice,
+    SidebarSlice: SidebarSlice,
+    TokenSlice: TokenSlice,
+    SpikerTabsSlice: SpikerTabsSlice,
+    [baseApi.reducerPath]: baseApi.reducer,
+  },
 
-      middleware: (GetDefaultMiddleware) => GetDefaultMiddleware().concat(baseApi.middleware),
+  middleware: (GetDefaultMiddleware) =>
+    GetDefaultMiddleware().concat(baseApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

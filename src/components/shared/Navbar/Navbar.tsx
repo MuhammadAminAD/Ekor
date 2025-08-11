@@ -24,7 +24,9 @@ const Navbar = () => {
   const sidebarOpen = useSelector(
     (state: RootState) => state.SidebarSlice.isOpen
   );
-  const accessToken = useSelector((state: RootState) => state.TokenSlice.token.accessToken);
+  const accessToken = useSelector(
+    (state: RootState) => state.TokenSlice.token.accessToken
+  );
 
   return (
     <div className="w-full flex lg:gap-[45px] gap-[20px]  items-center bg-[#F9F9F9] py-[25px] border-b-[1px] border-[#D9D9D9]">

@@ -8,17 +8,15 @@ import walletIcon from "@/assets/icons/walletIcons.svg";
 import { removeToken } from "@/features/TokenSlice";
 import { useNavigate } from "react-router-dom";
 const UserInfo = () => {
-  const accessToken = useSelector((state: RootState) => state.TokenSlice.token.accessToken);
+  const accessToken = useSelector(
+    (state: RootState) => state.TokenSlice.token.accessToken
+  );
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
     <Sheet>
-      <SheetTrigger>
-        {accessToken && (
-          <button className="cursor-pointer">
-            <img src={userLogo} alt="" />
-          </button>
-        )}
+      <SheetTrigger className={cn(`cursor-pointer`)}>
+        {accessToken && <img src={userLogo} alt="" />}
       </SheetTrigger>
 
       <SheetContent

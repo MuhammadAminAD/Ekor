@@ -5,7 +5,7 @@ export const FilterApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getFilters: builder.query<FilterResponse, void>({
       query: () => ({
-        url: "/filetr/filter-menus", 
+        url: "/filter/filter-menus", 
         method: "GET",
       }),
     }),

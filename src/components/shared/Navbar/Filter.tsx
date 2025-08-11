@@ -34,7 +34,6 @@ const Filter = () => {
 
   useEffect(() => {
     if (data) {
-      console.log(data?.data.categories);
       dispatch(setMenus(data?.data.categories));
     }
   }, [data, dispatch]);
@@ -42,11 +41,10 @@ const Filter = () => {
   return (
     <div>
       <DropdownMenu>
-        <DropdownMenuTrigger className={cn("outline-none")}>
-          <button className="lg:flex hidden items-center gap-[15px] font-medium text-[#1C1C1C] text-[16px] leading-[100%] cursor-pointer">
+        <DropdownMenuTrigger className={cn(
+          "outline-none lg:flex hidden items-center gap-[15px] font-medium text-[#1C1C1C] text-[16px] leading-[100%] cursor-pointer mt-[5px]")}>
             <img src={filterIcon} alt="filter icon" />
             Filter
-          </button>
         </DropdownMenuTrigger>
 
         <DropdownMenuContent
