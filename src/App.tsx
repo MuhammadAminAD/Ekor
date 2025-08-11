@@ -33,28 +33,26 @@ export default function App() {
         </div>
       )}
 
-      <div className="flex">
-        {isHome || sidebarOpen ? (
-          <div
-            className={`transition-all duration-300 ease-in-out border-r border-[#D9D9D9] bg-[#F9F9F9] fixed z-40 top-[100px] left-0 h-[calc(100vh-100px)]`}
-            style={{ width: `${sidebarWidth}px` }}
-          >
-            <Sidebar />
-          </div>
-        ) : null}
 
+
+      {isHome || sidebarOpen ? (
         <div
-          className={`${styles.Container} transition-all duration-300 ${
-            isHome ? "pt-[175px]" : "pt-[100px]"
-          }`}
-          style={{
-            marginLeft:
-              isHome || sidebarOpen ? `${sidebarWidth + 25}px` : "25px",
-          }}
+          className={`transition-all duration-300 ease-in-out border-r border-[#D9D9D9] bg-[#F9F9F9] fixed z-40 top-[100px] left-0 h-[calc(100vh-100px)]`}
+          style={{ width: `${sidebarWidth}px` }}
         >
+          <Sidebar />
+        </div>
+      ) : null}
+
+      <div
+        className={`${styles.Container} transition-all duration-300 ${isHome ? "pt-[175px]" : "pt-[100px]"
+          }`}
+      >
+        <div className="bg-white">
           <AppRouter />
         </div>
       </div>
+
     </>
   );
 }
