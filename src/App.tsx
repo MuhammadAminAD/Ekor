@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import Navbar from "./components/shared/Navbar/Navbar";
+import Navbar from "./components/shared/Navbar";
 import Sidebar from "./components/shared/Sidebar";
 import AppRouter from "./router/AppRouter";
 import { styles } from "./styles/index.styles";
 import type { RootState } from "./app/store";
 import { useLocation } from "react-router-dom";
-import FilterCategories from "./components/shared/Navbar/FilterCategories";
+import FilterCategories from "./components/Navbar/FilterCategories";
 
 export default function App() {
   const sidebarOpen = useSelector(

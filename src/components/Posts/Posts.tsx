@@ -5,6 +5,7 @@ import PostItem from "./PostItem";
 import { Post } from "@/types/post.types";
 import { setPosts } from "@/features/PostsSlice";
 import { useGetPostsQuery } from "@/services/PostsService";
+import PostsSkeleton from "./PostsSkeleton";
 
 const Posts: React.FC = () => {
   const dispatch = useDispatch();
@@ -25,9 +26,16 @@ const Posts: React.FC = () => {
 
   const posts = useSelector((state: RootState) => state.PostsSlice.items);
 
-  if (isLoading) return <p>Yuklanmoqda...</p>;
   if (error) return <p>Xatolik yuz berdi</p>;
-  if (posts.length === 0) return <p>Postlar mavjud emas</p>;
+  if (isLoading) {
+    return (
+      <div className="grid grid-cols-4 gap-[50px] mt-[24px]">
+        {Array.from({ length: 3 }).map((_, index) => (
+          <PostsSkeleton key={index} />
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-4 gap-[30px] mt-[24px]">
