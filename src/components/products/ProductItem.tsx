@@ -2,15 +2,18 @@ import star from "@/assets/icons/star.svg";
 import TeacherIcon from "../icons/TeacherIcon";
 import FrameIcon from "../icons/FrameIcon";
 import img from "@/assets/img/BiznesCoursePicture.png";
+import { useNavigate, useParams } from "react-router-dom";
 const ProductItem = () => {
+  const navigate = useNavigate();
+  const {id} = useParams()
   return (
-    <div className="cursor-pointer">
+    <div onClick={() => navigate(`/cours-inside/${id}`)} className="cursor-pointer">
       <img src={img} alt="" />
       <div className="flex justify-between mt-[20px] ">
         <h2 className="max-w-[336px] font-medium text-[20px] leading-[100%] text-[#006AFF] ">
           Biznesda sherikchilik va halollik asoslari
         </h2>
-        <FrameIcon className="text-[#006AFF]" />
+        <FrameIcon className="text-[#3f587a]" />
       </div>
       <a className="block text-[#1C1C1C] underline text-[16px] leading-[100%] my-[10px] ">
         Husan Mamasaidov
