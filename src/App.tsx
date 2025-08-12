@@ -4,7 +4,7 @@ import Sidebar from "./components/shared/Sidebar";
 import AppRouter from "./router/AppRouter";
 import type { RootState } from "./app/store";
 import { useLocation } from "react-router-dom";
-import FilterCategories from "./components/Navbar/FilterCategories";
+import FilterCategories from "./components/FilterCategories";
 
 export default function App() {
   const sidebarOpen = useSelector(

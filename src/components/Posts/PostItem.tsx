@@ -6,6 +6,14 @@ import { Post } from "@/types/post.types";
 import { useState } from "react";
 import savedIcon from "@/assets/icons/savedIcon.svg";
 import bookIcon from "@/assets/icons/book-saved.svg";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
+
 interface PostProps {
   post: Post;
 }
@@ -71,10 +79,24 @@ const PostItem: React.FC<PostProps> = ({ post }) => {
             </span>
           </h3>
         )}
-        <button className="border-[1px] border-[#006aff] rounded-[15px] py-[12px] px-[20px] cursor-pointer ">
-          {" "}
-          <img src={bookIcon} alt="" />
-        </button>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              onClick={() => navigate("/course")}
+              variant={"outline"}
+              className="border-[1px] border-[#006aff] rounded-[15px] py-[12px] px-[20px] cursor-pointer "
+            >
+              <img src={bookIcon} alt="" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent
+            className={cn(
+              "bg-[#006aff] p-1 rounded-[15px] text-white text-[14px] font-medium "
+            )}
+          >
+            <p>Kursni ko'rish</p>
+          </TooltipContent>
+        </Tooltip>
       </div>
     </div>
   );
