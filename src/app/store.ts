@@ -4,20 +4,18 @@ import SidebarSlice from "@/features/SidebarSlice.ts";
 import TokenSlice from "@/features/TokenSlice.ts";
 import { baseApi } from "@/services/baseApi";
 import SpikerTabsSlice from "@/features/SpiketTabsSlice.ts";
-import FilterSlice from "@/features/FilterSlice";
-import FilterCategoriesSlice from "@/features/FilterCategoriesSlice";
-import PostsSlice from "@/features/PostsSlice";
+import FilterSlice from "@/features/FilterSlice"
+import CoursesTabsSlice from '@/features/CoursesTabsSlice.ts'
 export const store = configureStore({
-  reducer: {
-    FilterSlice: FilterSlice,
-    FilterCategoriesSlice: FilterCategoriesSlice,
-    PostsSlice: PostsSlice,
-    AuthenticationSlice: AuthenticationSlice,
-    SidebarSlice: SidebarSlice,
-    TokenSlice: TokenSlice,
-    SpikerTabsSlice: SpikerTabsSlice,
-    [baseApi.reducerPath]: baseApi.reducer,
-  },
+      reducer: {
+            FilterSlice: FilterSlice,
+            AuthenticationSlice: AuthenticationSlice,
+            SidebarSlice: SidebarSlice,
+            TokenSlice: TokenSlice,
+            SpikerTabsSlice: SpikerTabsSlice,
+            CoursesTabsSlice: CoursesTabsSlice,
+            [baseApi.reducerPath]: baseApi.reducer
+      },
 
   middleware: (GetDefaultMiddleware) =>
     GetDefaultMiddleware().concat(baseApi.middleware),

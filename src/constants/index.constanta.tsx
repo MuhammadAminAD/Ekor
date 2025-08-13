@@ -1,11 +1,4 @@
-import type {
-  ICourses,
-  ICoursestabsData,
-  IMenuCategory,
-  ISidebar,
-  IStatsDashboard,
-  IUserTabs,
-} from "@/types/index.types";
+import type { ICourses, ICoursestabsData, IfinanceCards, IfinanceTabsStudents, IMenuCategory, ISidebar, IStatsDashboard, IUserTabs } from "@/types/index.types";
 import SendIcon from "@/components/icons/SendIcon";
 import TeacherIcon from "@/components/icons/TeacherIcon";
 import ElementIcon from "@/components/icons/ElementIcon";
@@ -48,7 +41,7 @@ export const sideBar: ISidebar[] = [
 ];
 
 
-export const userTabs:IUserTabs[] = [
+export const userTabs: IUserTabs[] = [
   {
     title: "Profilni tahrirlash",
   },
@@ -610,4 +603,133 @@ export const courseItem = [
   },
 ];
 
-export const tabsMenu = ["Product Details", "Rating & Reviews", "FAQs"];
+export const tabsMenu = ['Product Details', 'Rating & Reviews', 'FAQs']
+
+import finnacePayCard from "@/assets/icons/financePayCardIcons.svg"
+export const financeCardsData: IfinanceCards[] = [
+  {
+    id: 0,
+    icons: finnacePayCard,
+    cardNum: "9860 **** **** 1261",
+    date: "23-May 2022, 12:58",
+    summa: "1 260 000",
+    payDate: "23-May 2022"
+  },
+  {
+    id: 1,
+    icons: finnacePayCard,
+    cardNum: "9860 **** **** 1261",
+    date: "24-May 2022, 12:58",
+    summa: " 260 000",
+    payDate: "23-May 2022"
+  },
+  {
+    id: 2,
+    icons: finnacePayCard,
+    cardNum: "Elektron hamyon",
+    date: "23-Avgust 2022, 12:58",
+    summa: "1 260 000",
+    payDate: "23-May 2022"
+  }
+]
+export const financeTabsStudentsData: IfinanceTabsStudents[] = [
+  {
+    id: 1,
+    name: "Abdurathidov Sammalar",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 12,
+    activity: "23:145",
+    sum: "1 250 000 UZS"
+  },
+  {
+    id: 2,
+    name: "Sayfuddinova Komila",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 27,
+    activity: "50/623",
+    sum: "1 250 000 UZS"
+  },
+  {
+    id: 3,
+    name: "Sammdarov Aknul",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 5,
+    activity: "1:1251",
+    sum: "1 250 000 UZS"
+  },
+  {
+    id: 4,
+    name: "Turgu'kov Unid",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 24,
+    activity: "4:43:12",
+    sum: "1 250 000 UZS"
+  },
+  {
+    id: 5,
+    name: "Adibeljallova Zulfiya",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 8,
+    activity: "1:54:11",
+    sum: "1 250 000 UZS"
+  },
+  {
+    id: 6,
+    name: "Mahmudov Oybek",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 3,
+    activity: "0:27:52",
+    sum: "1 250 000 UZS"
+  },
+  {
+    id: 7,
+    name: "Tohlvova Layle",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 18,
+    activity: "10:237",
+    sum: "1 250 000 UZS"
+  },
+  {
+    id: 8,
+    name: "Asadov Akram",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 12,
+    activity: "2:42:19",
+    sum: "1 250 000 UZS"
+  },
+  {
+    id: 9,
+    name: "Rouiyeva Jamila",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 9,
+    activity: "0:39:54",
+    sum: "1 250 000 UZS"
+  },
+  {
+    id: 10,
+    name: "Ruduyorov Mansur",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 18,
+    activity: "1:57:35",
+    sum: "1 250 000 UZS"
+  },
+    {
+    id: 11,
+    name: "Abdurathidov Sammalar",
+    phone: "+998 99 123 45 67",
+    firstUse: "15.12.2022 15:35",
+    logins: 12,
+    activity: "23:145",
+    sum: "1 250 000 UZS"
+  },
+];

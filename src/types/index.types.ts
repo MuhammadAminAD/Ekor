@@ -74,11 +74,31 @@ export interface IStatsDashboard {
 
 export interface ICoursestabsData {
   id: number,
-  coursesIcons : string
+  coursesIcons: string
   courseName: string,
   date: string,
   price: string,
   status: string,
   statusIconsColor: string,
   moreDetails: string,
+}
+
+
+export interface IfinanceTabsStudents {
+  id: number;
+  name: string;
+  phone: string;
+  firstUse: string;
+  logins: number;
+  activity: string;
+  sum: string;
+}
+
+export interface IfinanceCards {
+  id : number,
+  icons : string,
+  cardNum : string,
+  date : string,
+  summa : string,
+  payDate? : string
 }

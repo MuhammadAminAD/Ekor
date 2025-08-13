@@ -24,7 +24,7 @@ const chartConfig = {
 
 export function StudentsGenderChart() {
   return (
-    <Card className="flex items-center border-1 border-[#D9D9D9] rounded-[15px] h-auto">
+    <Card className="flex items-center border-1 border-[#D9D9D9] rounded-[15px] h-auto shadow-none">
       <CardContent>
         <ChartContainer
           config={chartConfig}

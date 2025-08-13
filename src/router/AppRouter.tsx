@@ -16,7 +16,7 @@ export default function AppRouter() {
         <Route element={<Home />} path="/" />
         <Route element={<CoursePage />} path="/course" />
         <Route element={<User />} path="/user" />
-        <Route element={<Spiker/>}  path="/spiker"/>
+        <Route element={<Spiker />} path="/spiker" />
         <Route element={<CourseInside />} path="/cours-inside/:id" />
       </Routes>
     </>

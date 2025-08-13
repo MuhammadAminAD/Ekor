@@ -8,7 +8,7 @@ import { StudentsInterestsChart } from "./StudentsInterestsChart";
 import referalLinkIcons from "@/assets/icons/linkIcons.svg"
 export default function StudentsTabs() {
   return (
-    <div >
+    <div className="pb-[100px]">
       <div className="flex items-center justify-between my-[38px] ">
         <h3 className="font-black text-[28px] text-[Umumiy statistika] leading-[100%] ">
           Studentlar bo’yicha statistika

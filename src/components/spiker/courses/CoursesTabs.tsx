@@ -3,7 +3,11 @@ import { buyCoursesTabsData } from '@/constants/index.constanta'
 import CoursesTabsDiv from './CoursesTabsDiv'
 import CoursesTabsPagination from './CoursesTabsPagination'
 import { useEffect, useState } from 'react'
+import { RootState } from '@/app/store'
+import { useSelector } from 'react-redux'
+import AboutCourses from './AboutCourses'
 export default function CoursesTabs() {
+  const { open } = useSelector((state: RootState) => state.CoursesTabsSlice)
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [paginatedItems, setPaginatedItems] = useState(buyCoursesTabsData.slice(0, 3));
   const [totalPages, setTotalPages] = useState<number>(0);
@@ -26,7 +30,7 @@ export default function CoursesTabs() {
     }
   }
   return (
-    <div>
+    open ? <AboutCourses /> : <div className='w-full pb-[210px]'>
       <div className="bg-[#F6F6F6] w-full rounded-[15px] px-[30px] pt-[20px] pb-[282px] ">
         <div className="flex items-center justify-between border-b-1 border-[#D9D9D9] pb-[20px]">
           <div className="flex items-center gap-[30px]">
@@ -51,14 +55,16 @@ export default function CoursesTabs() {
           return <CoursesTabsDiv data={element} key={value} />
         })}
       </div>
-      <div className='mt-[36px] flex items-center justify-between'>
+      <div className='mt-[36px] flex items-center justify-between w-full'>
         <p>Displaying {paginatedItems.length} out of {buyCoursesTabsData.length}</p>
-        <CoursesTabsPagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onNext={handleNext}
-          onPrevious={handlePrevious}
-        />
+        <div className='w-max'>
+          <CoursesTabsPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onNext={handleNext}
+            onPrevious={handlePrevious}
+          />
+        </div>
       </div>
     </div>
   )

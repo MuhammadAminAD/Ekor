@@ -6,7 +6,7 @@ import StatsDashboardCard from "./StatsDashboardCard";
 
 export default function GeneralTabs() {
     return (
-        <div>
+        <div className="pb-[77px]">
             <div className="flex items-center justify-between">
                 <h3 className="font-black text-[28px] text-[Umumiy statistika] leading-[100%] ">
                     Umumiy statistika
