@@ -1,4 +1,4 @@
-import { financeCardsData, FinanceStatsDashboardData } from "@/constants/index.constanta";
+import {  financeCardsData, FinanceStatsDashboardData } from "@/constants/index.constanta";
 import StatisticsBtn from "../GeneralTabs/StatisticsBtn";
 import StatsDashboardCard from "../GeneralTabs/StatsDashboardCard";
 import { styles } from "@/styles/index.styles";

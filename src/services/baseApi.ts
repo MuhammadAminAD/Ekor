@@ -1,19 +1,10 @@
-import type { RootState } from "@/app/store";
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+// services/baseApi.ts
+import { createApi } from "@reduxjs/toolkit/query/react";
+import customBaseQuery from "./CustomBaseQuary";
+
 
 export const baseApi = createApi({
-      reducerPath: 'api',
-      baseQuery: fetchBaseQuery({
-            baseUrl: 'http://localhost:3000/api/v1',
-            prepareHeaders: (headers, { getState }) => {
-                  const token = (getState() as RootState)
-
-                  if (token) {
-                        headers.set('Authorization', `Bearer ${token}`);
-                  }
-
-                  return headers
-            }
-      }),
-      endpoints: () => ({})
-})
+      reducerPath: "api",
+      baseQuery: customBaseQuery,
+      endpoints: () => ({}),
+});

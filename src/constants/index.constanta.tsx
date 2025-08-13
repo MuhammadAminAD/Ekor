@@ -1,8 +1,21 @@
-import type { ICourses, ICoursestabsData, IfinanceCards, IfinanceTabsStudents, IMenuCategory, ISidebar, IStatsDashboard } from "@/types/index.types";
+import type { ICourses, ICoursestabsData, IfinanceCards, IfinanceTabsStudents, IMenuCategory, ISidebar, IStatsDashboard, IUserTabs } from "@/types/index.types";
 import SendIcon from "@/components/icons/SendIcon";
 import TeacherIcon from "@/components/icons/TeacherIcon";
 import ElementIcon from "@/components/icons/ElementIcon";
 import FrameIcon from "@/components/icons/FrameIcon";
+import book from "@/assets/icons/book-saved.svg";
+import clock from "@/assets/icons/clock1.svg";
+import video from "@/assets/icons/video1.svg";
+import award from "@/assets/icons/award1.svg";
+import translate from "@/assets/icons/translate1.svg";
+import walletIcons from "@/assets/icons/walletIcons.svg";
+import teachericons from "@/assets/icons/teacherIcons.svg";
+import bookIcons from "@/assets/icons/bookIcons.svg";
+import moneysIcons from "@/assets/icons/moneysIcons.svg";
+import coursesIcons from "@/assets/icons/coursesTabsBookIcons.svg";
+import moneyRevice from "@/assets/icons/money-recive.svg";
+import walletMoney from "@/assets/icons/money-recive.svg";
+import cards from "@/assets/icons/money-recive.svg";
 
 export const sideBar: ISidebar[] = [
   {
@@ -27,6 +40,31 @@ export const sideBar: ISidebar[] = [
   },
 ];
 
+
+export const userTabs: IUserTabs[] = [
+  {
+    title: "Profilni tahrirlash",
+  },
+  {
+    title: "Umumiy Profil",
+  },
+  {
+    title: "Mening darslarim",
+  },
+  {
+    title: "Shaxsiy kabinet",
+  },
+  {
+    title: "Men yuklagan kurslar",
+    subTitle: "(Spiker bo'lganda)",
+  },
+  {
+    title: "Spiker panel",
+  },
+  {
+    title: "Profildan chiqish",
+  },
+];
 
 export const menuCategories: IMenuCategory[] = [
   {
@@ -129,7 +167,6 @@ export const menuCategories: IMenuCategory[] = [
     ],
   },
 ];
-
 
 export const courses: ICourses[] = [
   {
@@ -426,39 +463,35 @@ export const courses: ICourses[] = [
   },
 ];
 
-import walletIcons from "@/assets/icons/walletIcons.svg"
-import teachericons from "@/assets/icons/teacherIcons.svg"
-import bookIcons from "@/assets/icons/bookIcons.svg"
-import moneysIcons from '@/assets/icons/moneysIcons.svg'
+
 export const StatsDashboardData: IStatsDashboard[] = [
   {
     id: 0,
     icons: walletIcons,
     title: "Umumiy balans",
-    blueText: "15 500 000 UZS"
+    blueText: "15 500 000 UZS",
   },
   {
     id: 1,
     icons: teachericons,
     title: "O’quvchilar soni",
-    blueText: "215"
+    blueText: "215",
   },
   {
     id: 2,
     icons: bookIcons,
     title: "Kurslar soni",
-    blueText: "341"
+    blueText: "341",
   },
   {
     id: 2,
     icons: moneysIcons,
     title: "Ro’yxatdan o’tilgan kurslar",
-    blueText: "10"
+    blueText: "10",
   },
-]
+];
 
-//
-import coursesIcons from "@/assets/icons/coursesTabsBookIcons.svg"
+
 export const buyCoursesTabsData: ICoursestabsData[] = [
   {
     id: 0,
@@ -510,13 +543,9 @@ export const buyCoursesTabsData: ICoursestabsData[] = [
     statusIconsColor: "bg-[#F19D3B]",
     moreDetails: "Batafsil",
   },
-]
+];
 
 
-//
-import moneyRevice from "@/assets/icons/money-recive.svg"
-import walletMoney from "@/assets/icons/money-recive.svg"
-import cards from "@/assets/icons/money-recive.svg"
 export const FinanceStatsDashboardData: IStatsDashboard[] = [
   {
     id: 0,
@@ -541,187 +570,165 @@ export const FinanceStatsDashboardData: IStatsDashboard[] = [
     icons: moneyRevice,
     title: "Umumiy chiqimlar",
     blueText: "10 000 000",
-  }
-]
+  },
+];
 
-import book from '@/assets/icons/book-saved.svg'
-import clock from '@/assets/icons/clock1.svg'
-import video from '@/assets/icons/video1.svg'
-import award from '@/assets/icons/award1.svg'
-import translate from '@/assets/icons/translate1.svg'
 
 export const courseItem = [
   {
     id: 0,
     icon: book,
-    title: 'Umrbod egalik qilish imkoniyati',
+    title: "Umrbod egalik qilish imkoniyati",
   },
   {
     id: 1,
     icon: clock,
-    title: '12,5 soatlik videodarslik',
+    title: "12,5 soatlik videodarslik",
   },
   {
     id: 2,
     icon: video,
-    title: '7 ta videolar',
+    title: "7 ta videolar",
   },
   {
     id: 3,
     icon: award,
-    title: 'Kursni tugatganlik haqida sertifikat',
+    title: "Kursni tugatganlik haqida sertifikat",
   },
   {
     id: 4,
     icon: translate,
-    title: 'O’zbek tili',
+    title: "O’zbek tili",
   },
-]
+];
 
 export const tabsMenu = ['Product Details', 'Rating & Reviews', 'FAQs']
+
+import finnacePayCard from "@/assets/icons/financePayCardIcons.svg"
+export const financeCardsData: IfinanceCards[] = [
+  {
+    id: 0,
+    icons: finnacePayCard,
+    cardNum: "9860 **** **** 1261",
+    date: "23-May 2022, 12:58",
+    summa: "1 260 000",
+    payDate: "23-May 2022"
+  },
+  {
+    id: 1,
+    icons: finnacePayCard,
+    cardNum: "9860 **** **** 1261",
+    date: "24-May 2022, 12:58",
+    summa: " 260 000",
+    payDate: "23-May 2022"
+  },
+  {
+    id: 2,
+    icons: finnacePayCard,
+    cardNum: "Elektron hamyon",
+    date: "23-Avgust 2022, 12:58",
+    summa: "1 260 000",
+    payDate: "23-May 2022"
+  }
+]
 export const financeTabsStudentsData: IfinanceTabsStudents[] = [
   {
     id: 1,
-    name: "Abonatidúce-Samutar",
+    name: "Abdurathidov Sammalar",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
+    firstUse: "15.12.2022 15:35",
     logins: 12,
-    activity: "2:31:45",
-    sum: "1 250 000"
+    activity: "23:145",
+    sum: "1 250 000 UZS"
   },
   {
     id: 2,
-    name: "Savhatinou Renis",
+    name: "Sayfuddinova Komila",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
+    firstUse: "15.12.2022 15:35",
     logins: 27,
-    activity: "5:08:23",
-    sum: "1 250 000"
+    activity: "50/623",
+    sum: "1 250 000 UZS"
   },
   {
     id: 3,
-    name: "Samutarov Atrasi",
+    name: "Sammdarov Aknul",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
-    logins: 6,
-    activity: "1:12:51",
-    sum: "1 250 000"
+    firstUse: "15.12.2022 15:35",
+    logins: 5,
+    activity: "1:1251",
+    sum: "1 250 000 UZS"
   },
   {
     id: 4,
-    name: "Turgonov Javel",
+    name: "Turgu'kov Unid",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
-    logins: 34,
+    firstUse: "15.12.2022 15:35",
+    logins: 24,
     activity: "4:43:12",
-    sum: "1 250 000"
+    sum: "1 250 000 UZS"
   },
   {
     id: 5,
-    name: "Ardolatiova Zirina",
+    name: "Adibeljallova Zulfiya",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
-    logins: 6,
+    firstUse: "15.12.2022 15:35",
+    logins: 8,
     activity: "1:54:11",
-    sum: "1 250 000"
+    sum: "1 250 000 UZS"
   },
   {
     id: 6,
-    name: "Mehradov Ovke",
+    name: "Mahmudov Oybek",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
+    firstUse: "15.12.2022 15:35",
     logins: 3,
     activity: "0:27:52",
-    sum: "1 250 000"
+    sum: "1 250 000 UZS"
   },
   {
     id: 7,
-    name: "Taiseva Luhr",
+    name: "Tohlvova Layle",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
+    firstUse: "15.12.2022 15:35",
     logins: 18,
-    activity: "1:01:11",
-    sum: "1 250 000"
+    activity: "10:237",
+    sum: "1 250 000 UZS"
   },
   {
     id: 8,
-    name: "Andrei Anan",
+    name: "Asadov Akram",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
+    firstUse: "15.12.2022 15:35",
     logins: 12,
-    activity: "1:01:11",
-    sum: "1 250 000"
+    activity: "2:42:19",
+    sum: "1 250 000 UZS"
   },
   {
     id: 9,
-    name: "Rodyno Janše",
+    name: "Rouiyeva Jamila",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
+    firstUse: "15.12.2022 15:35",
     logins: 9,
-    activity: "1:01:11",
-    sum: "1 250 000"
+    activity: "0:39:54",
+    sum: "1 250 000 UZS"
   },
   {
     id: 10,
-    name: "Zvidovaný Novur",
+    name: "Ruduyorov Mansur",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
-    logins: 16,
-    activity: "1:01:11",
-    sum: "1 250 000"
+    firstUse: "15.12.2022 15:35",
+    logins: 18,
+    activity: "1:57:35",
+    sum: "1 250 000 UZS"
   },
-  {
+    {
     id: 11,
-    name: "Turgonov Javel",
+    name: "Abdurathidov Sammalar",
     phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
-    logins: 34,
-    activity: "4:43:12",
-    sum: "1 250 000"
+    firstUse: "15.12.2022 15:35",
+    logins: 12,
+    activity: "23:145",
+    sum: "1 250 000 UZS"
   },
-  {
-    id: 12,
-    name: "Turgonov Javel",
-    phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
-    logins: 34,
-    activity: "4:43:12",
-    sum: "1 250 000"
-  },
-  {
-    id: 13,
-    name: "Turgonov Javel",
-    phone: "+998 99 123 45 67",
-    firstUse: "KS 23 2021 56 35",
-    logins: 34,
-    activity: "4:43:12",
-    sum: "1 250 000"
-  },
-]
-
-//
-import payCardIcons from "@/assets/icons/financePayCardIcons.svg"
-export const financeCardsData : IfinanceCards[] = [
-  {
-    id: 1,
-    icons: payCardIcons,
-    cardNum: "9800 ***** 1261",
-    date: "23-May 2022 12:58",
-    summa: "260 000",
-  },
-  {
-    id: 2,
-    icons: payCardIcons,
-    cardNum: "Elektron hamyon",
-    date: "23-May 2022 12:58",
-    summa: "1260 000",
-  },
-  {
-    id: 3,
-    icons: payCardIcons,
-    cardNum: "9800 ***** 1261",
-    date: "23-May 2022 12:58",
-    summa: "260 000",
-    payDate : "21-May 2022"
-  },
-]
+];

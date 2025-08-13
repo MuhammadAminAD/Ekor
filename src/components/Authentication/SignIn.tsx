@@ -7,7 +7,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignInSchema, type SignInSchemaType } from '@/schemas/SignInSchema';
 import GoogleIcon from "../icons/GoogleIcon";
-import FacebookIcon from "../icons/FacebookIcon";
 import { useLoginMutation } from "@/services/AuthService";
 import { RootState } from "@/app/store";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +16,7 @@ import Loader from "../ui/Loader";
 
 export default function SignIn() {
       function AuthGoogle() {
-            window.location.href = "http://localhost:3000/api/v1/auth/google"
+            window.location.href = `${import.meta.env.VITE_API_URL}/api/v1/auth/google`
       }
 
 
@@ -119,11 +118,11 @@ export default function SignIn() {
                               <span className="w-full h-[1px] border-2 border-[#D9D9D9]" />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-x-7.5">
-                              <button onClick={() => AuthGoogle()} className="flex items-center gap-5 py-6 w-full border-1  border-disabled justify-center rounded-2xl active:scale-90 duration-100">
+                        <div className="grid grid-cols-1">
+                              <button onClick={() => AuthGoogle()}
+                                    className="flex items-center gap-5 py-6 w-full border-1  border-disabled justify-center rounded-2xl active:scale-90 duration-100">
                                     <GoogleIcon />Google orqali tizimga kiring
                               </button>
-                              <button className="flex items-center gap-5 py-6 w-full border-1  border-disabled justify-center rounded-2xl active:scale-90 duration-100"><FacebookIcon />Facebook orqali tizimga kiring</button>
                         </div>
 
                         <div className="w-full flex items-center mt-12.5">

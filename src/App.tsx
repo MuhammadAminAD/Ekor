@@ -13,11 +13,11 @@ export default function App() {
 
   const sidebarWidth = sidebarOpen ? 240 : 100;
   const { pathname } = useLocation();
-  const showSidebar = pathname !== "/auth" ? true : sidebarOpen;
+  const showSidebar = pathname === "/" ? true : sidebarOpen;
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full z-50">
+      <div className="fixed top-0 left-0 w-full z-[1111]">
         <Navbar />
       </div>
 

@@ -16,6 +16,11 @@ export interface IMenuCategory {
   submenu: ISubmenuItem[];
 }
 
+export interface IUserTabs {
+  title: string;
+  subTitle?: string;
+}
+
 
 export interface ICourses {
   id: number;

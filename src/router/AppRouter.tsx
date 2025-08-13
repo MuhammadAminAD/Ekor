@@ -4,6 +4,7 @@ import Authentication from "@/pages/Authentication";
 import User from "@/pages/User";
 import Spiker from "@/pages/Spiker";
 import CoursePage from "@/pages/CoursePage";
+import GoogleAuth from "@/router/GoogleAuth";
 import CourseInside from "@/pages/CourseInside";
 
 export default function AppRouter() {
@@ -11,6 +12,7 @@ export default function AppRouter() {
     <>
       <Routes>
         <Route element={<Authentication />} path="/auth" />
+        <Route element={<GoogleAuth />} path="/googleAuth" />
         <Route element={<Home />} path="/" />
         <Route element={<CoursePage />} path="/course" />
         <Route element={<User />} path="/user" />

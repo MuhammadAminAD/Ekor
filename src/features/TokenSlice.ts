@@ -8,7 +8,7 @@ interface AuthState {
 
 const initialState: AuthState = {
   token: {
-    accessToken: localStorage.getItem("token"),
+    accessToken: localStorage.getItem("token") || "null",
   },
 };
 
@@ -18,7 +18,8 @@ const TokenSlice = createSlice({
   reducers: {
     setToken: (state, action) => {
       state.token = action.payload;
-      localStorage.setItem("token", action.payload);
+      const accessToken = action.payload.accessToken
+      localStorage.setItem("token", accessToken);
     },
     removeToken: (state) => {
       state.token = { accessToken: null };
